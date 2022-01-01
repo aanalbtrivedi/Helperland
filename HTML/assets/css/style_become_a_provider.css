@@ -1,0 +1,217 @@
+.navigationclass{
+	background: transparent;
+	border-width: 0px;
+	padding-top: 10px;
+}
+
+.backgroundimg{
+	background-image: url("../img/become-a-pro-banner.png");
+}
+
+.Rounded-Rectangle {
+    height: 40px;
+    margin: 0px 0px 0px 10px;
+    padding: 5px 29px 13px;
+    border-radius: 20px;
+    border: solid 1px #ffffff80;
+    background-color: #716e6e;
+}
+
+.logo{
+	width: 90px;
+}
+
+ul li a{
+	color: #ffffff !important;
+}
+
+.card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    width: 25rem;
+    padding: 40px 0 50px 0; 
+}
+
+.touch-inputs{
+    font-size: 15px;
+    height: 46px;
+    margin: 15px 0px 0px 0px;
+    padding: 17px 70px 17px 17px;
+    border: solid 1px #c8c8c8;
+    background-color: #ffffff;
+}
+
+.form-check-input{
+   margin-top: 22px;
+}
+
+.inputcheckbox1{
+	font-size: 16px;
+	color: #4f4f4f;
+	margin-top: 17px;
+}
+
+.acceptpolisy{
+	color: #1fb6ff;
+}
+
+.get-started{
+	margin-top: 17px;
+    width: 166px;
+    height: 46px;
+    border-radius: 23px;
+    background-color: #1d7a8c;
+    color: #ffffff;
+}
+
+.Ellipse-down{
+	padding: 50px 0 50px 0;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.pics{
+	padding-top: 20px;
+}
+
+.How-it-works {
+	padding-top: 50px;
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.45;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4f4f4f;
+}
+
+.Register-yourself {
+	padding-top: 50px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4f4f4f;
+}
+
+.registerinfo{
+	font-family: Roboto;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4f4f4f;
+}
+
+.registerimg{
+	padding-top: 50px;
+	width: 260px;
+    height: 260px;
+    object-fit: contain;
+}
+
+.readmorearrow{
+	width: 29px;
+    height: 9px;
+}
+
+.readmore{
+	padding-top: 20px;
+	color: #4f4f4f;
+}
+
+.request{
+	padding-top: 50px;
+	width: 260px;
+    height: 260px;
+    object-fit: contain;
+    float: left;
+}
+
+.newsletter {
+  margin: 77px 14px 20px 19px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #353548;
+}
+
+.newsmail {
+  border-radius: 20px;
+  border: solid 1px #565656;
+  background-color: #f4f5f8;
+}
+
+.newssubmit{
+  border-radius: 20px;
+  background-color: #ff7b6d;
+}
+
+.btnsubmit{
+	font-size: 14px;
+	color: #ffffff;
+}
+
+.footer{
+	background-color: #111111;
+	margin-top: 50px;
+}
+
+.footernav{
+	padding-left: 200px;
+}
+
+.footerlogo{
+	padding-top: 50px;
+	width:70px;
+}
+
+.socialicons{
+	margin-top: 40px;
+	padding-left: 5px;
+}
+
+.footermenu{
+	font-size: 14px;
+	color: #f1f1f1;
+}
+
+@media (max-width: 900.98px) {
+	.invisiblepics{
+		display: none;
+	}
+}
+
+.line{
+    height: 1px;
+    margin: 16px 0 0px;
+    background-color: #424242;
+}
+
+.terms{
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #9ba0a3;
+}
+
