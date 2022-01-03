@@ -800,3 +800,560 @@ img.white_logo_transparent_background {
   background-image: url("../img/group-35.png");
 }
 
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.navigationclass{
+	background: transparent;
+	border-width: 0px;
+	padding-top: 10px;
+}
+
+.backgroundimg{
+	background-image: url("../img/become-a-pro-banner.png");
+}
+
+.Rounded-Rectangle {
+    height: 40px;
+    margin: 0px 0px 0px 10px;
+    padding: 5px 29px 13px;
+    border-radius: 20px;
+    border: solid 1px #ffffff80;
+    background-color: #716e6e;
+}
+
+.logo{
+	width: 90px;
+}
+
+ul li a{
+	color: #ffffff !important;
+}
+
+.card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    width: 25rem;
+    padding: 40px 0 50px 0; 
+}
+
+.touch-inputs{
+    font-size: 15px;
+    height: 46px;
+    margin: 15px 0px 0px 0px;
+    padding: 17px 70px 17px 17px;
+    border: solid 1px #c8c8c8;
+    background-color: #ffffff;
+}
+
+.form-check-input{
+   margin-top: 22px;
+}
+
+.inputcheckbox1{
+	font-size: 16px;
+	color: #4f4f4f;
+	margin-top: 17px;
+}
+
+.acceptpolisy{
+	color: #1fb6ff;
+}
+
+.get-started{
+	margin-top: 17px;
+    width: 166px;
+    height: 46px;
+    border-radius: 23px;
+    background-color: #1d7a8c;
+    color: #ffffff;
+}
+
+.Ellipse-down{
+	padding: 50px 0 50px 0;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.pics{
+	padding-top: 20px;
+}
+
+.How-it-works {
+	padding-top: 50px;
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.45;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4f4f4f;
+}
+
+.Register-yourself {
+	padding-top: 50px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4f4f4f;
+}
+
+.registerinfo{
+	font-family: Roboto;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4f4f4f;
+}
+
+.registerimg{
+	padding-top: 50px;
+	width: 260px;
+    height: 260px;
+    object-fit: contain;
+}
+
+.readmorearrow{
+	width: 29px;
+    height: 9px;
+}
+
+.readmore{
+	padding-top: 20px;
+	color: #4f4f4f;
+}
+
+.request{
+	padding-top: 50px;
+	width: 260px;
+    height: 260px;
+    object-fit: contain;
+    float: left;
+}
+
+.newsletter {
+  margin: 77px 14px 20px 19px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #353548;
+}
+
+.newsmail {
+  border-radius: 20px;
+  border: solid 1px #565656;
+  background-color: #f4f5f8;
+}
+
+.newssubmit{
+  border-radius: 20px;
+  background-color: #ff7b6d;
+}
+
+.btnsubmit{
+	font-size: 14px;
+	color: #ffffff;
+}
+
+.footer{
+	background-color: #111111;
+	margin-top: 50px;
+}
+
+.footernav{
+	padding-left: 200px;
+}
+
+.footerlogo{
+	padding-top: 50px;
+	width:70px;
+}
+
+.socialicons{
+	margin-top: 40px;
+	padding-left: 5px;
+}
+
+.footermenu{
+	font-size: 12px;
+	color: #f1f1f1;
+}
+
+@media (max-width: 900.98px) {
+	.invisiblepics{
+		display: none;
+	}
+}
+
+.line{
+    height: 1px;
+    margin: 16px 0 0px;
+    background-color: #424242;
+}
+
+.terms{
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #9ba0a3;
+}
+
+.book{
+    color: #ffffff !important;
+}
+
+.Rounded-Rectangle-book {
+  width: 225px;
+  height: 54px;
+  margin: 16px 7px 157px 0;
+  padding: 18px 33px 22px 31px;
+  opacity: 0.6;
+  border-radius: 27px;
+  background-color: #006072;
+  border: solid 1px #ffffff80;
+}
+
+.headingli{
+    color: #ffffff;
+}
+
+ul.headingul{
+    list-style-image: url("../img/ic-check.png");
+}
+
+.Loremheading{
+    color: white;
+    padding-left: 30px;
+}
+
+ul li a{
+    color: #ffffff !important;
+}
+
+.flag{
+    padding: 15px 0px 0px 20px;
+}
+
+.Rounded-Rectangle {
+    height: 40px;
+    margin: 0px 0px 247px 10px;
+    padding: 0px 29px 13px;
+    border-radius: 20px;
+    border: solid 1px #ffffff80;
+    background-color: #716e6e;
+}
+
+.headerbg{
+    background-image: url("../img/homebg.png");
+}
+
+.navbarhome{
+    background: transparent;
+    border-width: 0px;
+    padding-top: 10px;
+}
+
+.right{
+    float: right;
+}
+
+.headermenu{
+    padding:50px;
+}
+
+.headermenudesc {
+  color: #ffffff;
+  padding-left: 0px;
+}
+
+.leftimg{
+    float: right !important;
+}
+
+.Ellipse-down{
+    padding-top: 50px;
+}
+
+.left{
+  float: left !important;
+}
+
+.carousel-caption{
+  text-align: left !important;
+}
+
+.Why-Helperland {
+  margin: 87px 84px 84px 90px;
+  font-family: Roboto;
+  font-size: 40px;
+  color: #4f4f4f;
+  font-weight: bold;
+}
+
+.whyimages {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.Experience-Vetted-Professionals {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #565656;
+  padding-bottom: 30px;
+}
+
+.onlinepay{
+  padding-bottom: 63px !important;
+}
+
+.prodesc{
+   font-family: Roboto;
+  font-size: 17px;
+  line-height: 1.41;
+  text-align: justify;
+  color: #565656;
+}
+
+.picshomeleft{
+    position: absolute;
+    top: 1750px;
+    left:0px;
+    width: 125px;
+    height: 1120px;
+}
+
+.picshomeright{
+    position: absolute;
+    top: 1750px;
+    right:0px;
+    width: 125px;
+    height: 1120px;
+}
+
+.Lorem-ipsum-dolor {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: left;
+  color: #4f4f4f;
+  padding: 104px 27px 18px 20px;
+}
+
+.Lorem-ipsum-dolor-desc {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: left;
+  color: #4f4f4f;
+  padding-left: 20px;
+}
+
+.pics3{
+    padding: 104px 27px 18px 0px;
+}
+
+.Our-Blog {
+  margin: 15px 0px 15px 0px;
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: bold;
+  color: #4f4f4f;
+  text-align: center;
+}
+
+.blogpics {
+  margin: 66px 20px 43px 12px;
+  width: 357px;
+  height: 367px;
+  border-radius: 4px;
+  box-shadow: 0 0 30px 0 #e4ebf0;
+  background-color: #ffffff;
+}
+
+.blogpic1 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: left;
+  color: #3d4046;
+}
+
+img.Group-28 {
+  width: 357px;
+  height: 164px;
+  margin: 0 0 0px;
+  object-fit: contain;
+}
+
+.home-blog-date {
+  margin: 0px 23px 14px 0px;
+  font-family: Roboto;
+  font-size: 13px;
+  text-align: left;
+  color: #a3a3a3;
+}
+
+.blog-desc {
+  margin: 14px 49px 27px 0px;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.38;
+  text-align: left;
+  color: #565656;
+}
+
+.Read-the-Post {
+  font-family: Roboto;
+  font-size: 15px;
+  text-align: left;
+  color: #4f4f4f;
+}
+
+.customer-sec {
+  height: 908px;
+  padding: 65px 0 0;
+  background-color: #f4f5f8;
+}
+
+.What-Our-Customers-Say {
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: #4f4f4f;
+}
+
+.message {
+  width: 35px;
+  height: 36px;
+  margin: 20px 0 4px 67px;
+}
+
+img.Group-31 {
+  width: 70px;
+  height: 70px;
+  margin: 43px 18px 27px 15px;
+  padding: 4px 0 0;
+  object-fit: contain;
+}
+
+.customersay{
+  padding-top: 50px;
+  margin: 4px 67px 8px 1px;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: right;
+  color: #4f4f4f;
+}
+
+.customersirname{
+  padding-left: 50px;
+  margin: 8px 103px 43px 1px;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #8e8e8e;
+}
+
+.nav-other{
+  height: 64px;
+  margin: 0 0 0px;
+  padding: 6px 15px 4px;
+  opacity: 0.8;
+  background-color: #525252;
+}
+
+.nav-other-logo{
+  width: 73px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.Rounded-Rectangle-other {
+  height: 40px;
+  border-radius: 20px;
+  border: solid 1px #ffffff80;
+  background-color: #29626d;
+  margin:5px;
+}
+
+.Rounded-Rectangle-price {
+  height: 40px;
+  border-radius: 20px;
+  border: solid 1px #ffffff80;
+  margin:5px;
+}
+
+.about-us {
+  height: 27px;
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 0.67;
+  text-align: center;
+  color: #4f4f4f;
+  margin: 39px 0 18px 0;
+}
+
+.stone{
+  width: 160px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-us-para {
+  margin: 38px 0px 30px 0px;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--brownish-grey);
+}
+
+.footer-navbar{
+  background: transparent;
+}
+
+.navbar-nav.navbar-center {
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+        }
