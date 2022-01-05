@@ -778,3 +778,69 @@ span.Cancel {
   text-align: left;
   color: #ffffff;
 }
+
+</* Service Provider>Upcoming Service */>
+
+.extra-css{
+
+}
+
+.hist{
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 2.05;
+  letter-spacing: normal;
+  text-align: left;
+  color: #646464;
+  float: left;
+  display: inline;
+}
+
+.cus-export{
+  width: 70px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: #146371;
+  float: right;
+  display: inline;
+}
+
+.cus-export-write{
+  color: #ffffff;
+}
+
+.cap-img{
+  width: 30px;
+  height: 30px;
+  border: 2px solid #aaaaaa;
+  border-radius: 50%;
+  padding: 5px;
+  display: inline;
+}
+
+.stars{
+  width: 120px;
+  height: 20px;
+  display: inline;
+  padding-left: 30px;
+}
+
+.cus-block{
+  display: block;
+}
+
+.customer-payment{
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+  color: #1d7a8c;
+}
+
+.btn-primary{
+  width: 70px;
+  height: 34px;
+  border-radius: 17px;
+
+}
