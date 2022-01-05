@@ -206,6 +206,16 @@ ul li a{
 	.invisiblepics{
 		display: none;
 	}
+
+  .headermenu{
+    padding:5px;
+  }
+}
+
+@media (max-width: 768px){
+  .Rounded-Rectangle {
+    display: none;
+  }
 }
 
 .line{
@@ -247,6 +257,7 @@ ul.headingul{
 .Loremheading{
     color: white;
     padding-left: 30px;
+    padding-top: 180px;
 }
 
 ul li a{
@@ -259,7 +270,7 @@ ul li a{
 
 .Rounded-Rectangle {
     height: 40px;
-    margin: 0px 0px 247px 10px;
+    margin: 0px 0px 5px 10px;
     padding: 0px 29px 13px;
     border-radius: 20px;
     border: solid 1px #ffffff80;
@@ -271,7 +282,13 @@ ul li a{
 }
 
 .navbarhome{
-    background: transparent;
+    background: #716e6e;
+    border-width: 0px;
+    padding-top: 10px;
+}
+
+.navbarhome.scrolled{
+    background-color: black
     border-width: 0px;
     padding-top: 10px;
 }
@@ -584,4 +601,180 @@ img.Group-31 {
 
 .policy{
   color: #6eabef;
+}
+
+
+
+</* Service Provider>Upcoming Service */>
+.Upcoming-Service-nav {
+  font-family: Roboto;
+  font-size: 17px;
+  line-height: 1.41;
+  color: #ffffff;
+}
+
+.nav-noti-icon{
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.seperator{
+  width: 1px;
+  height: 48px;
+  margin: 1px 16px 5px 30px;
+  background-color: #e1e1e1;
+}
+
+.welcomediv {
+  height: 119px;
+  margin: 1px 0 30px;
+  padding: 80px 0 0;
+  background-color: #f9f9f9;
+}
+
+.wctext {
+  font-family: Roboto;
+  font-size: 30px;
+  line-height: 0.8;
+  color: #4f4f4f;
+  text-align: center;
+}
+
+.wc-Sandip {
+  font-weight: bold;
+}
+
+.left-sec{
+  margin: 31px 31px 30px 0px;
+  padding: 18px 0 327px;
+  background-color: #1d7a8c;
+  padding-top: 0px;
+  display: block;
+  overflow-x:auto;
+}
+
+.right-sec{
+  
+}
+
+.list-group-item {
+    background-color: #1d7a8c !important;
+    border-width: 0px;
+}
+
+a.list-group-item, button.list-group-item {
+    color: #ffffff;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    text-shadow: 0 -1px 0 #146371;
+    background-image: -webkit-linear-gradient(top,#146371 0,#146371 100%);
+    background-image: -o-linear-gradient(top,#146371 0,#146371 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#337ab7),to(#146371));
+    background-image: linear-gradient(to bottom,#146371 0,#146371 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2b669a', GradientType=0);
+    background-repeat: repeat-x;
+    border-color: #146371;
+} 
+
+.table-heading{
+  background-color: #f9f9f9;
+  height: 49px;
+  padding-top: 30px !important;
+  opacity: 0.5;
+  margin: 31px 31px 30px 0px;
+  margin: 1px 0;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.63;
+  text-align: left;
+  color: #646464;}
+
+.table-visual{
+  margin: 30px 20px 30px 31px;
+  padding: 1px 0 0;
+  border: solid 1px #e1e1e1;
+  background-color: #ffffff;
+}
+
+.sort{
+  width: 14px;
+  height: 14px;
+  display: inline;
+}
+
+.serviceid{
+  margin: 28px 89px 1px 17px;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.63;
+  text-align: left;
+  color: #646464;
+}
+
+.wcdate{
+  margin: 1px 0px 0px 7px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.63;
+  text-align: left;
+  color: #646464;
+  display: inline;
+}
+
+.servicedate{
+  display: block;
+}
+
+.calendar2{
+  width: 16px;
+  height: 19px;
+  display: inline;
+}
+
+.servicetimepic{
+  width: 17px;
+  height: 17px;
+  display: inline;
+}
+
+.servicetime {
+  margin: 1px 0px 0px 7px;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  color: #646464;
+}
+
+.customer-details-admin{
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.63;
+  text-align: left;
+  color: #646464;
+}
+
+.homepic{
+  width: 22px;
+  height: 22px;
+  margin: 1px 0px 0px 7px;
+}
+
+.cancel-button{
+  width: 80px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: #ff6b6b;
+}
+
+span.Cancel {
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 2.81;
+  text-align: left;
+  color: #ffffff;
 }
