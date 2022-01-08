@@ -1,6 +1,13 @@
 body{
   font-family: 'Roboto', sans-serif;
+   max-width: 1560px;
+    margin: auto;
+    transition : all 0.5s ease-in-out;
+    position: relative;
 }
+
+
+
 
 a.scroll-link { display: inline-block; position: relative; transition: all 0.3s; }
 a.scroll-link:hover { transform: translateY(10px); }
@@ -206,6 +213,22 @@ ul li a{
 	.invisiblepics{
 		display: none;
 	}
+  
+}
+
+@media (max-width: 990.98px) {
+  .invisibletable{
+    display: none;
+  }
+  
+}
+
+
+@media (min-width: 768.98px) {
+  .visible{
+    display: none;
+  }
+}
 
   .headermenu{
     padding:5px;
@@ -279,12 +302,14 @@ ul li a{
 
 .headerbg{
     background-image: url("../img/homebg.png");
+    opacity: 1.7;
 }
 
 .navbarhome{
     background: #716e6e;
     border-width: 0px;
     padding-top: 10px;
+    opacity: 0.9;
 }
 
 .navbarhome.scrolled{
@@ -506,11 +531,16 @@ img.Group-31 {
 }
 
 .nav-other{
-  height: 64px;
   margin: 0 0 0px;
   padding: 6px 15px 4px;
   opacity: 0.8;
   background-color: #525252;
+}
+
+.nav-visible{
+  margin: 0 0 0px;
+  opacity: 0.8;
+  background-color: #1d7a8c;
 }
 
 .nav-other-logo{
@@ -524,7 +554,7 @@ img.Group-31 {
   border-radius: 20px;
   border: solid 1px #ffffff80;
   background-color: #29626d;
-  margin:5px;
+  margin:0px;
 }
 
 .Rounded-Rectangle-price {
@@ -629,7 +659,7 @@ img.Group-31 {
 .welcomediv {
   height: 119px;
   margin: 1px 0 30px;
-  padding: 80px 0 0;
+  padding: 50px 0 0;
   background-color: #f9f9f9;
 }
 
@@ -638,6 +668,7 @@ img.Group-31 {
   font-size: 30px;
   line-height: 0.8;
   color: #4f4f4f;
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -647,7 +678,7 @@ img.Group-31 {
 
 .left-sec{
   margin: 31px 31px 30px 0px;
-  padding: 18px 0 327px;
+  padding: 18px 0 435px;
   background-color: #1d7a8c;
   padding-top: 0px;
   display: block;
@@ -705,7 +736,7 @@ a.list-group-item, button.list-group-item {
   display: inline;
 }
 
-.serviceid{
+.common-text-effect{
   margin: 28px 89px 1px 17px;
   font-family: Roboto;
   font-size: 16px;
@@ -843,4 +874,179 @@ span.Cancel {
   height: 34px;
   border-radius: 17px;
 
+}
+
+
+
+
+
+.bg-primary {
+    color: #fff;
+    background-color: #1fb6ff;
+}
+
+
+.nav-admin{
+  margin: 0 0 0px;
+  padding: 6px 15px 4px;
+  opacity: 0.8;
+  background-color: #1fb6ff !important;
+}
+
+.logout{
+  width: 26px;
+  height: 29px;
+  background-color: var(--white);
+}
+
+.admin-user-name{
+   width: 36px;
+  height: 36px;
+}
+
+.admin-helperland{
+  font-family: SwitzeraADF !important;
+  font-size: 37.5px;
+  font-weight: bold;
+  line-height: 0.65;
+  text-align: left;
+  color: #ffffff;
+}
+
+
+
+.admin-table{
+  overflow: hidden;
+}
+
+.admin-left-sidebar {
+  font-family: Roboto;
+  font-size: 15.5px;
+  line-height:;
+  text-align: left;
+  color: #646464;
+  margin-top: 0px !important;
+}
+
+.admin-user-div{
+  background-color: #f2f4f5 !important;
+}
+
+.User-Management {
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 2.05;
+  text-align: left;
+  color: #646464;
+  display: inline;
+}
+
+.add-new-user-btn {
+  width: 132px;
+  height: 36px;
+  border: 4px #1fb6ff;
+  background-color: #1fb6ff;
+}
+
+.add-new-user {
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 1.71;
+  text-align: center;
+  color: #ffffff;
+  display: inline;
+}
+
+img.add-user {
+  width: 16px;
+  height: 16px;
+  margin: 0 7px 0 0;
+  object-fit: contain;
+  display: inline;
+}
+
+.admin-white-Rectangle {
+  height: 86px;
+  margin: 10px 1px 20px 20px;
+  padding: 20px 21px 20px 15px;
+  border: solid 1px #e1e1e1;
+  background-color: #ffffff;
+}
+
+.admin-whitebox-button {
+  width: 205px;
+  height: 46px;
+  margin: 0 15px 0 0;
+  padding: 17px 11px;
+  border: solid 1px #dedddd;
+  background-color: #ffffff;
+  display: inline;
+}
+
+.admin-search-box {
+  width: 84px;
+  height: 46px;
+  background-color: #1fb6ff;
+  display: inline;
+  border: 0px #1fb6ff;
+}
+
+.admin-search {
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #ffffff;
+}
+
+.admin-clear-box {
+  width: 84px;
+  height: 46px;
+  border: solid 1px #dedddd;
+  background-color: #ffffff;
+}
+
+.admin-clear {
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  color: #646464;
+}
+
+.ddl-admin {
+  border: solid 50% #dedddd;
+  margin: 0px !important;
+}
+
+.admin-table2{
+  margin: 0px !important;
+}
+
+.ddl-admin-menu {
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 2.19;
+  text-align: left;
+  color:#646464;
+  display: block;
+}
+
+.common-text-effect-bold{
+  margin: 28px 89px 1px 17px;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.63;
+  text-align: left;
+  color: #646464;
+}
+
+.admin-rights {
+  margin: 20px 5px 20px 20px;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 1.71;
+  text-align: left;
+  color: #a2a6a8;
 }
