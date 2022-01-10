@@ -1,183 +1,270 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
 <head>
-	<title>FAQ Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-	 <!-- bootstrap Links -->
-	 <link rel="stylesheet" type="text/css" href="bootstrapcss/bootstrap.min.css">
-	 <link rel="stylesheet" type="text/css" href="bootstrapcss/bootstrap-theme.min.css">
-	 <link href="assets/css/styleFAQ.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About</title>
+	<!-- bootstrap Links -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="bootstrapcss/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrapcss/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 <body>
-	<div class="Layer-0">
-		<div class="container-fluid">
-			<!-- ======= Header ======= -->
-			<header>
-				<nav>
-					<div class="navbar" id="navbar">
-						<img class="Logo" src="assets/img/white-logo-transparent-background.png" alt="logo">
-						<ul>
-							 <li class="Rounded-Rectangle Book-now"><a href="#home">Book now</a></li>
-							 <li class="Bordered-Rounded-Rectangle Prices-services"><a href="#news">Prices & Services</a><li>
-							 <li class="Menu3"><a href="#">Warranty</a></li>
-							 <li class="Menu4"><a href="#">Blog</a></li>
-							 <li class="Menu5"><a href="#">Contact</a></li>
-							 <li class="Rounded-Rectangle-5-Login Login"><a href="#">Login</a></li>
-							 <li class="Rounded-Rectangle-5-Helper Become-a-Helper"><a href="#">Become a Helper</a></li>
-						</ul>
-					</div>
-				</nav>
-			</header>
-			<!-- End Header -->
-			<div class="faq-banner">
-				
+	<!-- Header -->
+	<header>
+		<nav class="navbar-inverse nav-other">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			    </button>
+		      <a class="navbar-brand" href="#"><img src="assets/img/white-logo.png" class="nav-other-logo img-responsive" alt="logo"></a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+			    <ul class="nav navbar-nav right">
+			      <li><a href="#" class="Rounded-Rectangle-other">Book a Cleaner</a></li>
+			      <li><a href="#" class="Rounded-Rectangle-price">Prices & Services</a></li>
+				  <li><a href="#">Our Guarantee</a></li>
+				  <li><a href="#">Blog</a></li>
+				  <li><a href="#">Contact us</a></li>
+				  <li><a href="#" class="Rounded-Rectangle-other">Login</a></li>
+				  <li><a href="#" class="Rounded-Rectangle-other">Become a Helper</a></li>
+			    </ul>
 			</div>
-			<div>
-				<p class="FAQs">FAQs</p>
+		  </div>
+		</nav>
+		<img src="assets/img/faq-banner.png" class="img-responsive">
+	</header>
+	<!-- Header End -->
+
+	<!-- Middle Section -->
+	<section class="container">
+		<h1 class="about-us">FAQs</h1>
+		<img src="assets/img/stone.png" class="img-responsive stone">
+		<p class="faqs-middle"> Whether you are Customer or Service provider, We have tried our best to solve all your queries and questions. </p>
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 for-both-box">
+				<button type="button" class="For-Customer" onclick="myFunction()">For Customer</button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 for-both-box">
+				<button type="button" class="For-service-provider" onclick="myFunction2()">For Service Povider</button>
+			</div>
+		</div>
+		<hr class="hori-line">
+		<div class="row"  id="myDIV">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
 			</div>
 		</div>
 
+		<div class="row"  id="myDIV2">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 spaces">
+				<img src="assets/img/desc-arrow.png" class="img-responsive desc-arrow">
+				<p class="cust-ques collapsible">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?</p>
+				<div class="content">
+					 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum. </p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Middle Section -->
+
+	<!--Newsletter-->
+	<section>
+		<div class="text-center">
+	     	<div class=" justify-content-center align-self-center">
+	     		<h3 class="newsletter">GET OUR NEWSLETTER</h3>
+	     		<input type="text" name="" class="newsmail" placeholder="Your Email">
+	     		<button class="newssubmit" type="button"><span class="btnsubmit">Submit</span></button>
+	     	</div>
+	     </div>
+	</section>
+	<!--Newsletter End-->
+
+	<!--Footer-->
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-1">
+					<a class="navbar-brand" href="#"><img src="assets/img/white-logo.png" class="logo img-responsive"></a>
+				</div>
+				<div class="col-md-10">
+					<nav class="navbar-inverse footer-navbar">
+					    <div class="navbar-header">
+					    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						    </button>
+					    </div>
+					    <div class="collapse navbar-collapse" id="myNavbar">
+						    <ul class="nav navbar-nav navbar-center">
+						      <li><a href="#" class="footermenu">HOME</a></li>
+						      <li><a href="#" class="footermenu">ABOUT</a></li>
+						      <li><a href="#" class="footermenu">TESTIMATIONS</a></li>
+						      <li><a href="#" class="footermenu">FAQS</a></li>
+						      <li><a href="#" class="footermenu">INSURANCE POLISY</a></li>
+						      <li><a href="#" class="footermenu">IMPRESSUM</a></li>
+						    </ul>
+						</div>
+					</nav>
+				</div>
+				<div class="col-md-1">
+					<a href="#"><img src="assets/img/facebook.png" class="socialicons"></a>
+					<a href="#"><img src="assets/img/instagram.png" class="socialicons"></a>
+				</div>
+			</div>
+		</div>
 		<div class="container">
-			<!-- ======= FAQs ======= -->
-			<img src="assets/img/stone.png" class="stone">
-			<p class="info">
-			  Whether you are Customer or Service provider,
-			  We have tried our best to solve all your queries and questions.
-			</p>
-			<div class="row ">
-				<a href="#">
-					<div class="col-md-6 rectCoustomer division1">	
-						<p class="Customer" >
-		 				 	For Customer
-						</p>
-					</div>
-				</a>
-				<a href="#">
-					<div class="col-md-6 division2 rectService">
-						<p class="service">
-						  For Service Provider
-						</p>
-					</div>
-				</a>
+			<div class="line"></div>
+			<div class="text-center">
+			    <div class=" justify-content-center align-self-center ">
+					<span class="terms">©2018 Helperland. All rights reserved.Terms and Conditions  |  Privacy Policy</span>
+				</div>
 			</div>
-			<div class="row">
-				<div class="rectangle"></div>
-			</div>
-			<div class="row">
-				<ul class="first">
-					<li>
-						<a href="#">
-							<p class="Lorem-first">
-							  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?
-							</p>
-						</a>
-						<p class="Lorem-first-des">
-						  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante vitae, dapibus velit. Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel semper. Ut non imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in gravida tincidunt. Fusce in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec et placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu, sodales tempor eros. Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit ullamcorper accumsan ut eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
-						</p>
-					</li>
-				</ul>
-				<ul class="rightarrow second">
-					<li>
-						<a href="#">
-							<p class="Lorem-other">
-							  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?
-							</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<p class="Lorem-other">
-							  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?
-							</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<p class="Lorem-other">
-							  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?
-							</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<p class="Lorem-other">
-							  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?
-							</p>
-						</a>
-					</li>
-					<li>
-						<p class="Lorem-other">
-						  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?
-						</p>
-					</li>
-					<li>
-						<a href="#">
-							<p class="Lorem-other">
-							  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?
-							</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<p class="Lorem-other">
-							  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?
-							</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<p class="Lorem-other">
-							  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis tellus ac ut non imperdiet velit?
-							</p>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<!-- End FAQs -->
 		</div>
-
-		<div class="container-fluid">
-			<!-- ======= NEWSLETTER ======= -->
-			<div>
-				<p class="GET-OUR-NEWSLETTER">
-  					GET OUR NEWSLETTER
-				</p>
-			</div>
-			<div>
-				<input type="text" class="Rounded-Rectangle-Email" placeholder="YOUR EMAIL">
-   				<button class="Rounded-Rectangle-colored ">Submit</button>	
-   			</div>
-   			<!-- End NEWSLETTER -->
-
-   			<!-- ======= Footer ======= -->
-   			<div class="footer">
-   				<img src="assets/img/white-logo-transparent-background.png" class="footerLogo">
-   				<ul class="footerMenu position">
-					<li><a href="#home">HOME</a></li>
-					<li><a href="#news">ABOUT</a></li>
-					<li><a href="#">TESTIMONIALS</a></li>
-					<li><a href="#">FAQS</a></li>
-					<li><a href="#">INSURANCE POLICY</a></li>
-					<li><a href="#">IMPRESSUM</a></li>
-				</ul>
-				<a href="#"><img src="assets/img/facebook.png" class="facebook"></a>
-				<a href="#"><img src="assets/img/instagram.png" class="instagram"></a>
-				<div class="lastline"></div>
-				<p class="Terms-and-Conditions">
-				  ©2018Helperland
-				  <span class="text-style-1">.</span>
-				  All rights reserved.Terms and Conditions  |  Privacy Policy
-				</p>
-   			</div>
-   			<!-- End NEWSLETTER -->
-		</div>
-	</div>
-
-<!-- ======= JavaScripts ======= -->
-<script type="text/javascript" src="bootstrapjs/bootstrap.min.js"></script>
-<script src="assets/js/script.js"></script>
-<!-- End JavaScripts -->
+    </footer>
+	<!--Footer End-->
+	<script src="assets/js/main.js"></script>
+	<script type="text/javascript" src="bootstrapjs/bootstrap.min.js"></script>
 </body>
 </html>
