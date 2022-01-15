@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin>Service Requests</title>
+	<!-- bootstrap Links -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="bootstrapcss/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrapcss/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+	<!-- Header -->
+	<header> 
+	    <nav class="navbar navbar-dark bg-primary ">
+	      <div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					   <span class="icon-bar"></span>
+					   <span class="icon-bar"></span>
+					   <span class="icon-bar"></span>
+				</button>
+				 <h1 class="admin-helperland">helperland</h1>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav right">
+					 <li><a href="#" class="scroll-link"><img src="assets/img/admin-user.png" class="admin-user-name img-responsive"></a></li>
+					 <li><a href="#" class="scroll-link"><img src="assets/img/logout.png" class="logout"></a></li>
+				</ul>
+			</div>
+		  </div>
+	    </nav>
+	</header>
+	<!-- Header End -->
+
+	<!-- Middle Section -->
+		<Section>
+			<div class="container-fluid">
+				<div class="row admin-table">
+					<div class="col-md-2">
+						<table class="table admin-table">
+							<tr><td><a href="#" class="admin-left-sidebar">Service Management</a></td></tr>
+							<tr><td><a href="#" class="admin-left-sidebar">Role Management</a></td></tr>
+
+							<tr><td>
+								<div class="dropdown">
+									 <span class="btn btn-secondary dropdown-toggle ddl-leftside" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									   <a href="#" class="admin-left-sidebar">Coupon Code Management
+									    <img src="assets/img/forma-1-copy-14.png" class="leftsidearrow"></a>
+									 </span>
+									 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									   <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Coupon Codes</a></li>
+									   <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Usage History</a>
+									 </div>
+								</div>
+							</td></tr>
+							<tr><td><a href="#" class="admin-left-sidebar">Escalation Management</a></td></tr>
+							<tr><td><a href="#" class="admin-left-sidebar">Service Requests</a></td></tr>
+							<tr><td><a href="#" class="admin-left-sidebar">Service Providers</a></td></tr>
+							<tr><td><a href="#" class="admin-left-sidebar">User Management</a></td></tr>
+							<tr><td>
+								<div class="dropdown">
+									 <span class="btn btn-secondary dropdown-toggle ddl-leftside" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									   <a href="#" class="admin-left-sidebar">Finance Module
+									    <img src="assets/img/forma-1-copy-14.png" class="leftsidearrow"></a>
+									 </span>
+									 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									   <li><a class="dropdown-item" href="#" class="ddl-admin-menu">All Transactions</a></li>
+									   <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Generate Payment</a>
+									   	<li><a class="dropdown-item" href="#" class="ddl-admin-menu">Customer Invoices</a>
+									 </div>
+								</div>
+							</td></tr>
+							<tr><td><a href="#" class="admin-left-sidebar">Zip Code Management</a></td></tr>
+							<tr><td><a href="#" class="admin-left-sidebar">Rating Management</a></td></tr>
+							<tr><td><a href="#" class="admin-left-sidebar">Inquiry Management</a></td></tr>
+							<tr><td><a href="#" class="admin-left-sidebar">Newsletter Management</a></td></tr>
+
+							<tr><td>
+								<div class="dropdown">
+									 <span class="btn btn-secondary dropdown-toggle ddl-leftside" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									   <a href="#" class="admin-left-sidebar">Content Management
+									    <img src="assets/img/forma-1-copy-14.png" class="leftsidearrow"></a>
+									 </span>
+									 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									   <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Blog</a></li>
+									   <li><a class="dropdown-item" href="#" class="ddl-admin-menu">FAQs</a></li>
+									 </div>
+								</div>
+							</td></tr>
+						</table>
+					</div>
+					<div class="col-md-10 admin-user-div">
+						<h1 class="User-Management">Service Requests</h1>
+						<div class="admin-white-Rectangle">
+							<input type="text" name="" placeholder="ServiceID" class="admin-whitebox-button2">
+							<select class="admin-whitebox-button2">
+								<option class="selected">Customer</option>
+							</select>
+							<select class="admin-whitebox-button-diff">
+								<option class="selected">Service Provider</option>
+							</select>
+							<select class="admin-whitebox-button2">
+								<option class="selected">Status</option>
+							</select>
+							<input type="text" name="" placeholder="User role" class="admin-whitebox-button2">
+							<input type="text" name="" placeholder="Phone number" class="admin-whitebox-button2">
+							<input type="text" name="" placeholder="Zipcodes" class="admin-whitebox-button2">
+							<button type="button" class="admin-search-box2"><span class="admin-search2">Search</span></button>
+							<button type="button" class="admin-clear-box2"><span class="admin-clear2">Clear</span></button>
+						</div>
+
+						<table class="table table-visual admin-table2">
+							<tr class="table-heading">
+								<th class="common-text-effect-bold">Service ID<img src="assets/img/sort.png" class="img-responsive sort"></th>
+								<th class="common-text-effect-bold">Service date<img src="assets/img/sort.png" class="img-responsive sort"></th>
+								<th class="common-text-effect-bold">Customer Details<img src="assets/img/sort.png" class="img-responsive sort"></th>
+								<th class="common-text-effect-bold">Service provider<img src="assets/img/sort.png" class="img-responsive sort"></th>
+								<th class="common-text-effect-bold">Status<img src="assets/img/sort.png" class="img-responsive sort"></th>
+								<th class="common-text-effect-bold">Actions<img src="assets/img/sort.png" class="img-responsive sort"></th>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect"></td>
+								<td class="common-text-effect"><button type="button" class="btn btn-warning">New</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect"></td>
+								<td class="common-text-effect"><button type="button" class="btn btn-warning">New</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect">
+									<span class="cus-block">
+										<img src="assets/img/cap.png" class="img-responsive cap-img">
+										<span class="customer-details-admin">Lyum Watson</span>
+									</span>
+									<img src="assets/img/stars.png" class="img-responsive stars">
+									<span class="customer-details-admin">4</span>
+								</td>
+								<td class="common-text-effect"><button type="button" class="btn btn-info">Pending</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect">
+									<span class="cus-block">
+										<img src="assets/img/cap.png" class="img-responsive cap-img">
+										<span class="customer-details-admin">Lyum Watson</span>
+									</span>
+									<img src="assets/img/stars.png" class="img-responsive stars">
+									<span class="customer-details-admin">4</span>
+								</td>
+								<td class="common-text-effect"><button type="button" class="btn btn-info">Pending</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect">
+									<span class="cus-block">
+										<img src="assets/img/cap.png" class="img-responsive cap-img">
+										<span class="customer-details-admin">Lyum Watson</span>
+									</span>
+									<img src="assets/img/stars.png" class="img-responsive stars">
+									<span class="customer-details-admin">4</span>
+								</td>
+								<td class="common-text-effect"><button type="button" class="btn btn-success">Completed</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect">
+									<span class="cus-block">
+										<img src="assets/img/cap.png" class="img-responsive cap-img">
+										<span class="customer-details-admin">Lyum Watson</span>
+									</span>
+									<img src="assets/img/stars.png" class="img-responsive stars">
+									<span class="customer-details-admin">4</span>
+								</td>
+								<td class="common-text-effect"><button type="button" class="btn btn-success">Completed</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect">
+									<span class="cus-block">
+										<img src="assets/img/cap.png" class="img-responsive cap-img">
+										<span class="customer-details-admin">Lyum Watson</span>
+									</span>
+									<img src="assets/img/stars.png" class="img-responsive stars">
+									<span class="customer-details-admin">4</span>
+								</td>
+								<td class="common-text-effect"><button type="button" class="btn btn-danger">Cancelled</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect">
+									<span class="cus-block">
+										<img src="assets/img/cap.png" class="img-responsive cap-img">
+										<span class="customer-details-admin">Lyum Watson</span>
+									</span>
+									<img src="assets/img/stars.png" class="img-responsive stars">
+									<span class="customer-details-admin">4</span>
+								</td>
+								<td class="common-text-effect"><button type="button" class="btn btn-success">Completed</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect">
+									<span class="cus-block">
+										<img src="assets/img/cap.png" class="img-responsive cap-img">
+										<span class="customer-details-admin">Lyum Watson</span>
+									</span>
+									<img src="assets/img/stars.png" class="img-responsive stars">
+									<span class="customer-details-admin">4</span>
+								</td>
+								<td class="common-text-effect"><button type="button" class="btn btn-danger">Cancelled</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="common-text-effect">323436</td>
+								<td>
+									<span class="servicedate">
+										<img src="assets/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+									</span>
+									<img src="assets/img/servicetime.png" class="img-responsive servicetimepic"><span class="servicetime">12:00 - 18:00</span>
+								</td>
+								<td>
+									<span class="servicedate">
+										<span class="customer-details-admin">David Bough</span>
+									</span>
+									<img src="assets/img/home.png" class="img-responsive servicetimepic"><span class="customer-details-admin">Musterstrabe 5,12345 Bonn</span>
+								</td>
+								<td class="common-text-effect">
+									<span class="cus-block">
+										<img src="assets/img/cap.png" class="img-responsive cap-img">
+										<span class="customer-details-admin">Lyum Watson</span>
+									</span>
+									<img src="assets/img/stars.png" class="img-responsive stars">
+									<span class="customer-details-admin">4</span>
+								</td>
+								<td class="common-text-effect"><button type="button" class="btn btn-success">Completed</button></td>
+								<td class="common-text-effect">
+									<div class="dropdown">
+									  <button class="btn btn-secondary dropdown-toggle ddl-admin" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <i class="bi bi-three-dots-vertical"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+		  									<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+										</svg>
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Edit</a></li>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Deactivate</a>
+									    <li><a class="dropdown-item" href="#" class="ddl-admin-menu">Service History</a></li>
+									  </div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="6">  
+									<div class="row">
+										<div class="col-md-2">
+											<label class="lblshow">Show</label>
+											<select class="showpage">
+												<option class="selected">10</option>
+											</select>
+										</div>
+									<div class="col-md-10">
+										<div class="center">
+											  <div class="pagination">
+												  <a href="#">&laquo;</a>
+												  <a href="#">1</a>
+												  <a href="#" class="active">2</a>
+												  <a href="#">3</a>
+												  <a href="#">4</a>
+												  <a href="#">5</a>
+												  <a href="#">6</a>
+												  <a href="#">&raquo;</a>
+											  </div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						
+						</table>
+						
+					<p class="admin-rights">©2018 Helperland. All rights reserved.</p>
+					</div>
+
+				</div>
+			</div>
+		</Section>
+	<!-- Middle Section End -->
+
+
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+	<script type="text/javascript" src="bootstrapjs/bootstrap.min.js"></script>
+</body>
+</html>
