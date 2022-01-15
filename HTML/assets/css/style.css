@@ -272,6 +272,7 @@ p { font-size: 16px; font-weight: 400; color: #4F4F4F; line-height: 1.3; }
 
 .backgroundimg{
 	background-image: url("../img/become-a-pro-banner.png");
+    padding :50px;
 }
 
 .Rounded-Rectangle {
@@ -292,7 +293,7 @@ ul li a{
 }
 
 .card {
-    margin: 0 auto;
+    margin: 50px auto;
     float: none;
     margin-bottom: 10px;
     width: 25rem;
@@ -302,7 +303,17 @@ ul li a{
 .touch-inputs{
     font-size: 15px;
     height: 46px;
-    margin: 15px 0px 0px 0px;
+    margin: 10px 0px 10px 0px;
+    padding: 17px 70px 17px 17px;
+    border: solid 1px #c8c8c8;
+    background-color: #ffffff;
+}
+
+.touch-inputs-num{
+    font-size: 15px;
+    height: 46px;
+    width: 260px;
+    margin: 10px 0px 10px 0px;
     padding: 17px 70px 17px 17px;
     border: solid 1px #c8c8c8;
     background-color: #ffffff;
@@ -332,7 +343,7 @@ ul li a{
 }
 
 .Ellipse-down{
-	padding: 50px 0 50px 0;
+	padding: 50px 0 0px 0;
 }
 
 .left{
@@ -441,25 +452,17 @@ ul li a{
 .footer{
 	background-color: #111111;
 	margin-top: 50px;
-}
-
-.footernav{
-	padding-left: 200px;
-}
-
-.footerlogo{
-	padding-top: 50px;
-	width:70px;
+    padding-top: 60px;
 }
 
 .socialicons{
-	margin-top: 40px;
 	padding-left: 5px;
 }
 
 .footermenu{
 	font-size: 12px;
 	color: #f1f1f1;
+    padding: 15px;
 }
 
 @media (max-width: 900.98px) {
@@ -505,7 +508,7 @@ ul li a{
 }
 
 
-@media (min-width: 768.98px) {
+@media (min-width: 900.98px) {
   .visible{
     display: none;
   }
@@ -829,14 +832,7 @@ img.Group-31 {
   width: 73px;
   height: 40px;
   object-fit: contain;
-}
-
-.Rounded-Rectangle-other {
-  height: 40px;
-  border-radius: 20px;
-  border: solid 1px #ffffff80;
-  background-color: #29626d;
-  margin:5px;
+  display: inline;
 }
 
 .Rounded-Rectangle-price {
@@ -871,16 +867,6 @@ img.Group-31 {
   line-height: 1.5;
   text-align: center;
   color: var(--brownish-grey);
-}
-
-.footer-navbar{
-  background: transparent;
-}
-
-.navbar-nav.navbar-center {
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
 }
 
 .customer-desc{
@@ -939,9 +925,7 @@ img.Group-31 {
 }
 
 .welcomediv {
-  height: 119px;
-  margin: 1px 0 30px;
-  padding: 50px 0 0;
+  padding: 10px 0 20px; 
   background-color: #f9f9f9;
 }
 
@@ -1203,7 +1187,7 @@ span.Cancel {
 
 .admin-left-sidebar {
   font-family: Roboto;
-  font-size: 15.5px;
+  font-size: 14px;
   line-height:;
   text-align: left;
   color: #646464;
@@ -1667,6 +1651,235 @@ p.why-decs-right {
 
 .contact-pin{
   position: absolute;
-  top:75%;
+  top:220%;
   left: 45%;
+}
+
+.topnav2{
+  background-color: #525252;
+  overflow: hidden;
+  opacity: 0.6;
+  padding-top: 3px;
+}
+
+.topnav2 a {
+  float: right;
+  display: block;
+  margin: 5px;
+  padding: 6px 15px 4px;
+  color: #ffffff !important;
+  opacity: 5;
+  background-color: #525252;
+}
+
+.topnav2 a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #525252;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  display: block;
+  margin: 5px;
+  padding: 6px 15px 4px;
+  opacity: 0.8;
+  color: #ffffff !important;
+  opacity: 0.8;
+  background-color: #525252;
+}
+
+.Rounded-Rectangle-other {
+  height: 40px !important;
+  border-radius: 20px;
+  border: solid 1px #ffffff80 !important;
+  background-color: #29626d !important;
+  margin:5px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+.topnav2 .icon {
+  display: none;
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 990px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav2 a:not(:first-child) {display: none;}
+  .topnav2 a.icon {
+    float: right;
+    display: block;
+  }
+
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 990px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .topnav2.responsive {position: relative;}
+  .topnav2.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav2.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .Rounded-Rectangle-other {
+    border: solid 0px !important;
+    background-color: transparent !important;
+  }
+    .Rounded-Rectangle-price {
+    border: 0px !important;
+    border: solid 0px !important;
+  }
+}
+
+.footer-logo{
+  width: 106px;
+  height: 78px;
+  margin: 0px 0 26px 2px;
+}
+
+.nav-other-logo2{
+    width: 100px;
+    height: 80px;
+}
+
+.admin-whitebox-button2 {
+  width: 110px;
+  margin: 0 15px 0 0;
+  padding: 17px 11px;
+  border: solid 1px #dedddd;
+  background-color: #ffffff;
+  display: inline;
+}
+
+.admin-whitebox-button-diff {
+  width: 150px;
+  margin: 0 15px 0 0;
+  padding: 17px 11px;
+  border: solid 1px #dedddd;
+  background-color: #ffffff;
+  display: inline;
+}
+
+.admin-search-box2 {
+  height: 46px;
+  background-color: #1fb6ff;
+  display: inline;
+  border: 0px #1fb6ff;
+}
+
+.admin-search2 {
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #ffffff;
+}
+
+.admin-clear-box2 {
+  height: 46px;
+  border: solid 1px #dedddd;
+  background-color: #ffffff;
+}
+
+.admin-clear2 {
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  color: #646464;
+}
+
+.center {
+  text-align: center;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.lblshow{
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 2.29;
+  text-align: left;
+  color: #646464;
+}
+
+.showpage {
+  width: 58px;
+  height: 40px;
+  border-radius: 4px;
+  border: solid 1px #d6d6d6;
+  background-color: #ffffff;
+}
+
+.ddl-leftside {
+  margin: 0px !important;
+  background-color: #ffffff;
+}
+
+.leftsidearrow{
+    padding :5px;
 }
