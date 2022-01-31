@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/bootstrap3/bootstrapcss/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap3/bootstrapcss/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <img src="~/img/white-logo.png" class="nav-other-logo img-responsive" alt="logo">
+            <a href="#" class="Rounded-Rectangle-other">Become a helper</a>
+            <a href="#" class="Rounded-Rectangle-other">Login</a>
+            <a href="#">Contact us</a>
+            <a href="#">Blog</a>
+            <a href="#">Our Guarantee</a>
+            <a href="#" class="Rounded-Rectangle-price">Prices & Services</a>
+            <a href="#" class="Rounded-Rectangle-other">Book a Cleaner</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunctionnav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+       
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <img src="~/img/white-logo.png" class="footer-logo img-responsive"/>
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <div class="text-center">
+                        <div class="justify-content-center align-self-center ">
+                            <a href="#" class="footermenu">HOME</a></li>
+                            <a href="#" class="footermenu">ABOUT</a></li>
+                            <a href="#" class="footermenu">TESTIMATIONS</a></li>
+                            <a href="#" class="footermenu">FAQS</a></li>
+                            <a href="#" class="footermenu">INSURANCE POLISY</a></li>
+                            <a href="#" class="footermenu">IMPRESSUM</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <a href="#"><img src="~/img/facebook.png" class="socialicons"></a>
+                    <a href="#"><img src="~/img/instagram.png" class="socialicons"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="line"></div>
+            <div class="text-center">
+                <div class=" justify-content-center align-self-center ">
+                    <span class="terms">©2018 Helperland. All rights reserved.Terms and Conditions  |  Privacy Policy</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
