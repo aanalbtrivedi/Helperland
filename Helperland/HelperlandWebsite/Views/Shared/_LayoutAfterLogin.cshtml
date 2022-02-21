@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer>Service history</title>
+    <!-- bootstrap Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap3/bootstrapcss/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap3/bootstrapcss/bootstrap-theme.min.css">
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="topnav" id="myTopnav">
+            <img src="~/img/white-logo.png" class="nav-other-logo img-responsive" alt="logo">
+            <a href="#" class="scroll-link"><img src="~/img/go-up.png" class=""></a>
+            <a href="#" class="scroll-link"><img src="~/img/admin-user.png" class="nav-noti-icon img-responsive"></a>
+            <a href="#" class="scroll-link"><img src="~/img/icon-notification.png" class="nav-noti-icon img-responsive"></a>
+            <a href="#">Contact</a>
+            <a href="#">Blog</a>
+
+            <a href="#">Warranty</a>
+            <a href="#" class="">Prices & Services</a>
+            <a href="#" class="Rounded-Rectangle-other">Book now</a>
+
+            <a href="javascript:void(0);" class="icon" onclick="myFunctionnav()">
+                <i class="fa fa-bars"></i>
+            </a>
+            
+        </div>
+
+    </header>
+    <!-- Header End -->
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+
+</html>
