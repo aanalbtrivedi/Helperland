@@ -1,0 +1,328 @@
+﻿
+@{
+    ViewData["Title"] = "Customer Page";
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
+}
+
+
+<h1 class="text-center">Custome is : @ViewBag.Email</h1>
+<p>@ViewBag.SuccessMessage</p>
+
+
+<!-- Welcome Section -->
+<section class="welcomediv">
+    <h1 class="wctext">Welcome, <span class="wc-Sandip">Gaurang!</span></h1>
+</section>
+<!-- Welcome Section End -->
+<!-- Middle Section invisible -->
+<section class="container invisibletable">
+    <div class="row">
+        <div class="col-md-2 left-sec">
+            <table class="table">
+                <tr><td><a href="#" class="list-group-item">Dashboard</a></td></tr>
+                <tr><td><a href="#" class="list-group-item">Service History</a></td></tr>
+                <tr><td><a href="#" class="list-group-item active">Service Schedule</a></td></tr>
+                <tr><td><a href="#" class="list-group-item">Service Schedule</a></td></tr>
+                <tr><td><a href="#" class="list-group-item">Invoices</a></td></tr>
+                <tr><td><a href="#" class="list-group-item">Notifications</a></td></tr>
+            </table>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                <p class="hist">Service History</p>
+                <button type="button" class="cus-export"><Span class="cus-export-write">Export</Span></button>
+            </div>
+            <table class="table table-visual">
+                <tr class="table-heading">
+                    <th>Service Details<img src="~/img/sort.png" class="img-responsive sort"></th>
+                    <th>Service Provider<img src="~/img/sort.png" class="img-responsive sort"></th>
+                    <th>Payment<img src="~/img/sort.png" class="img-responsive sort"></th>
+                    <th>Status<img src="~/img/sort.png" class="img-responsive sort"></th>
+                    <th>Rate SP<img src="~/img/sort.png" class="img-responsive sort"></th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">09/04/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="common-text-effect">
+                        <button type="button" class="btn btn-success">Completed</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">15/03/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="common-text-effect">
+                        <button type="button" class="btn btn-success">Completed</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">10/03/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="common-text-effect">
+                        <button type="button" class="btn btn-success">Completed</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">28/02/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="common-text-effect">
+                        <button type="button" class="btn btn-danger">Cancelled</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">15/02/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="common-text-effect">
+                        <button type="button" class="btn btn-success">Completed</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">11/02/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="common-text-effect">
+                        <button type="button" class="btn btn-danger">Cancelled</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">31/01/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="common-text-effect">
+                        <button type="button" class="btn btn-success">Completed</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">19/01/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="common-text-effect">
+                        <button type="button" class="btn btn-success">Completed</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">05/01/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="sercommon-text-effectviceid">
+                        <button type="button" class="btn btn-danger">Cancelled</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2"><span class="wcdate">01/01/2018</span>
+                        </span>
+                        <span class="servicetime">12:00 - 18:00</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            <img src="~/img/cap.png" class="img-responsive cap-img">
+                            <span class="customer-details-admin">Lyum Watson</span>
+                        </span>
+                        <img src="~/img/stars.png" class="img-responsive stars">
+                        <span class="customer-details-admin">4</span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€63</span>
+                        </span>
+                    </td>
+                    <td class="common-text-effect">
+                        <button type="button" class="btn btn-danger">Cancelled</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Rate</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+<!-- Middle Section invisible End -->

@@ -1,0 +1,219 @@
+﻿@model HelperlandWebsite.ViewModels.Book_nowViewModel
+
+@{
+    ViewData["Title"] = "Book now";
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
+}
+
+
+<h1 class="book_Heading">Set up your cleaning service</h1>
+<img src="~/img/stone.png" class="img-responsive stone">
+<div class="container">
+    <div class="row book_Service">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div active-tab tab-color" id="tab1" onclick="Tab1Click()">
+                    Setup Service
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color" id="tab2" onclick="Tab2Click()">
+                    Schedual & Plan
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color" id="tab3" onclick="Tab3Click()">
+                    Your Details
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color" id="tab4" onclick="Tab4Click()">
+                    Make Payment
+                </div>
+            </div>
+
+            <div>
+                <div id="tabContent1" class="fordisplay">
+                    <label class="lblPostalCode">Enter your Postal Code</label>
+                    <input type="text" name="" value="Postal code" class="form-control PostalCode" />
+                    <input type="button" name="" value="Check Availability" class="btnCheckavail" />
+                </div>
+                <div id="tabContent2" class="fornonedisplay">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="lblPostalCode">When do you need the cleaner?</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="lblPostalCode">How long do you need your cleaner to stay?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="date" name="" value="" class="form-control clean-date" />
+                            <select class="form-control inline clean-time" formcontrolname="ServiceTime">
+                                <option value="8">8:00</option>
+                                <option value="8.5">8:30</option>
+                                <option value="9">9:00</option>
+                                <option value="9.5">9:30</option>
+                                <option value="10">10:00</option>
+                                <option value="10.5">10:30</option>
+                                <option value="11">11:00</option>
+                                <option value="11.5">11:30</option>
+                                <option value="12">12:00</option>
+                                <option value="12.5">12:30</option>
+                                <option value="13">13:00</option>
+                                <option value="13.5">13:30</option>
+                                <option value="14">14:00</option>
+                                <option value="14.5">14:30</option>
+                                <option value="15">15:00</option>
+                                <option value="15.5">15:30</option>
+                                <option value="16">16:00</option>
+                                <option value="16.5">16:30</option>
+                                <option value="17">17:00</option>
+                                <option value="17.5">17:30</option>
+                                <option value="18">18:00</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-control inline clean-hr" formcontrolname="ServiceHours">
+                                <option value="3">3.0 Hrs</option>
+                                <option value="3.5">3.5 Hrs</option>
+                                <option value="4">4.0 Hrs</option>
+                                <option value="4.5">4.5 Hrs</option>
+                                <option value="5">5.0 Hrs</option>
+                                <option value="5.5">5.5 Hrs</option>
+                                <option value="6">6.0 Hrs</option>
+                                <option value="6.5">6.5 Hrs</option>
+                                <option value="7">7.0 Hrs</option>
+                                <option value="7.5">7.5 Hrs</option>
+                                <option value="8">8.0 Hrs</option>
+                                <option value="8.5">8.5 Hrs</option>
+                                <option value="9">9.0 Hrs</option>
+                                <option value="9.5">9.5 Hrs</option>
+                                <option value="10">10.0 Hrs</option>
+                                <option value="10.5">10.5 Hrs</option>
+                                <option value="11">11.0 Hrs</option>
+                                <option value="11.5">11.5 Hrs</option>
+                                <option value="12">12.0 Hrs</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <label>Extra Services</label>
+                    <div class="text-center">
+                        <div class="justify-content-center align-self-center">
+                            <div class="prices-extra-services-dis">
+                                <div class="book-extra-services">
+                                    <input type="image" name="" src="~/img/cabinet.png">
+                                </div>
+                                <p class="prices-services-pics-desc">Inside cabinets</p>
+                            </div>
+                            <div class="prices-extra-services-dis">
+                                <div class="book-extra-services">
+                                    <input type="image" name="" src="~/img/fridge.png">
+                                </div>
+                                <p class="prices-services-pics-desc">Inside fridge</p>
+                            </div>
+                            <div class="prices-extra-services-dis">
+                                <div class="book-extra-services">
+                                    <input type="image" name="" src="~/img/oven.png">
+                                </div>
+                                <p class="prices-services-pics-desc">Inside oven</p>
+                            </div>
+                            <div class="prices-extra-services-dis">
+                                <div class="book-extra-services">
+                                    <input type="image" name="" src="~/img/dry.png">
+                                </div>
+                                <p class="prices-services-pics-desc">Laundry wash & dry</p>
+                            </div>
+                            <div class="prices-extra-services-dis">
+                                <div class="book-extra-services">
+                                    <input type="image" name="" src="~/img/window.png">
+                                </div>
+                                <p class="prices-services-pics-desc">Interior windows</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <label for="cmnt">Comments</label>
+                    <input type="textarea" name="" id="cmnt" placeholder="Comments" class="form-control plan-cmnt">
+                    <input type="Checkbox" name="" id="pet-check" />
+                    <label for="pet-check">I have pets at  home</label>
+                    <hr>
+                    <input type="button" name="" value="Continue" class="btncontinue">
+                </div>
+                <div id="tabContent3" class="fornonedisplay">
+                    <label class="lblPostalCode" for="address">Enter your contact details, so we can serve you in better way!</label>
+
+                    <div class="address-div">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <input type="radio" name="address" value="" id="address1" class="address-radio">
+                            </div>
+                            <div class="col-md-11">
+                                <label for="address1" class="address-details">
+                                    Address:Koenigstrasse 112, Tambach-Dietharz 99897
+                                </label>
+                                <label for="address1" class="address-details"> Phone number:9988648797</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="address-div">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <input type="radio" name="address" value="" id="address1" class="address-radio">
+                            </div>
+                            <div class="col-md-11">
+                                <label for="address1" class="address-details">
+                                    Address:Koenigstrasse 112, Tambach-Dietharz 99897
+                                </label>
+                                <label for="address1" class="address-details"> Phone number:9988648797</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="button" name="" value="+ Add New Address" class="addnewadd" onclick="addAddress()" id="addnewadd">
+                    <div id="test" class="fornonedisplay">
+                        <div class="addnewaddtab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="stNo">Street name</label>
+                                    <input type="text" name="" placeholder="Street name" id="stNo" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="hsNo">House number</label>
+                                    <input type="text" name="" placeholder="House nmuber" id="hsNo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="ptNo">Postal Code</label>
+                                    <input type="text" name="" placeholder="Postal Code" id="ptNo" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="city">City</label>
+                                    <input type="text" name="" placeholder="City" id="city" class="form-control">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="phno">Phone number</label>
+                                <input type="tel" name="" id="phno" class="form-control">
+                            </div>
+                            <div>
+                                <input type="button" name="" class="addsavebtn" value="Save">
+                                <input type="button" name="" class="addcanselbtn" value="Cancel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabContent4" class="fornonedisplay">
+                    <label class="lblPostalCode">Promo Code (optional)</label>
+                    <input type="text" name="" placeholder="Promo Code (optional)" class="form-control promo-code">
+                    <input type="button" name="" value="Apply" class="promo-applybtn">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/js/site.js" asp-append-version="true"></script>
