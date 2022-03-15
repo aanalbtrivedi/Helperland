@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HelperlandWebsite.ViewModels.CustomerHistoryViewModel>
+
+@{
+    ViewData["Title"] = "CustomerHistory";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<h1>CustomerHistory</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="col-md-9" id="bgclrset">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartingDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceHours)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Payment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceProviderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartingDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ServiceHours)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Payment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ServiceProviderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ServiceRequestId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ServiceRequestId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ServiceRequestId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

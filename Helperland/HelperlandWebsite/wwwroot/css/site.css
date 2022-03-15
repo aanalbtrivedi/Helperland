@@ -2088,6 +2088,14 @@ span.Cancel {
     display: inline;
 }
 
+.cus-addreq {
+    height: 34px;
+    border-radius: 17px;
+    background-color: #146371;
+    float: right;
+    display: inline;
+}
+
 .cus-export-write {
     color: #ffffff;
 }
@@ -3086,4 +3094,46 @@ p.why-decs-right {
 
 #displayHours{
     display : inline;
+}
+
+.viewbageid{
+    display:none;
+}
+
+.reschedule {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bgclrset{
+    background-color:#222222;
+}
+
+.modal-title{
+    display:inline;
+}
+
+.modal-closer{
+    float:right;
+    display:inline;
+}
+
+.modal-content {
+    width: 350px;
+}
+
+#txtServiceStartDate{
+    display:inline;
+}
+
+.bluecelpic{
+    display:inline;
+}
+
+.mysettingCust{
+    padding:8px;
+    margin:10px;
 }

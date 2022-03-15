@@ -134,8 +134,10 @@ namespace HelperlandWebsite.Controllers
             {
                 if (IsValidUser(loginViewModel))
                 {
-                    HttpContext.Session.SetString("email", loginViewModel.Email);
-                    return RedirectToAction("Book_now", "BookService");
+                    ViewBag.setId = 6;
+                    //HttpContext.Session.SetInt32("Id",loginViewModel.userId);
+                    HttpContext.Session.SetString("Email", loginViewModel.Email);
+                    return RedirectToAction("CustomerDashboard", "Customer");
 
                 }
                 else

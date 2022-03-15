@@ -183,3 +183,9 @@ C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\bin\Debu
 C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\obj\Debug\netcoreapp3.1\Razor\Views\BookService\GetAddress.cshtml.g.cs
+C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerDashboard.cshtml.g.cs
+C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutCustomer.cshtml.g.cs
+C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CustomerHistory.cshtml.g.cs
+C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\obj\Debug\netcoreapp3.1\Razor\Views\Customer\MySettings.cshtml.g.cs
+C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\obj\Debug\netcoreapp3.1\Razor\Views\Customer\GetAddressCust.cshtml.g.cs
+C:\Users\Aanal Trivedi\source\repos\HelperlandWebsite\HelperlandWebsite\obj\Debug\netcoreapp3.1\Razor\Views\Customer\ChangePassword.cshtml.g.cs

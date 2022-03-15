@@ -137,7 +137,7 @@
                                        id="datePicker"
                                        name="Tdate"
                                        class="form-control clean-date"
-                                       value="<%=DateTime.Now.ToString(" dd-mm-yyyy")%>
+                                       value="<%=DateTime.Now.ToString("dd-mm-yyyy")%>
 
                                 <select asp-for="Startingtime" id="ddlStartingTime" class="form-control inline clean-time">
                                     <option value="8" selected>8:00</option>
@@ -340,10 +340,11 @@
         }
 
         function btnschedule() {
-            debugger;
+            //debugger;
             var bookings = {};
-            var st = $('#ddlStartingTime').find(":selected").text();
-            var hr = $('#ddlHours').find(":selected").text();
+            
+            var hr = $('#ddlHours').find(":selected").val();
+            var hrs = $('#ddlHours').find(":selected").text();
             var cmt = $("#cmnt").val();
             var pt = $("#pet-check").val();
 
@@ -361,37 +362,37 @@
                 $("#displayExtra").html(favorite + " , ");
                 extraserv++;
             });
-            if (hr == "3.0 Hrs") {
+            if (hrs == "3.0 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 87.50;
                     $('#PerCleaning').html("87,50 €");
-                    hr = "3.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "3.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
 
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 100.00;
                     $('#PerCleaning').html("100,00 €");
-                    hr = "4 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "4 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 112.50;
                     $('#PerCleaning').html("112,50 €");
-                    hr = "4.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "4.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 125.00;
                     $('#PerCleaning').html("125,00 €");
-                    hr = "5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 137.50;
                     $('#PerCleaning').html("137,50 €");
-                    hr = "5.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "5.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 75.00;
@@ -399,572 +400,570 @@
                 }
 
             }
-            else if (hr == "3.5 Hrs") {
+            else if (hrs == "3.5 Hrs") {
                  if (extraserv == 1) {
                     var ttlPay = 100.00;
                      $('#PerCleaning').html("100,00 €");
-                     hr = "4 Hrs";
-                     alert("Your Hours would be Changed to " + hr);
+                     hrs = "4 Hrs";
+                     alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 112.50;
                      $('#PerCleaning').html("112,50 €");
-                     hr = "4.5 Hrs";
-                     alert("Your Hours would be Changed to " + hr);
+                     hrs = "4.5 Hrs";
+                     alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 125.00;
                      $('#PerCleaning').html("125,00 €");
-                     hr = "5 Hrs";
-                     alert("Your Hours would be Changed to " + hr);
+                     hrs = "5 Hrs";
+                     alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 137.50;
                      $('#PerCleaning').html("137,50 €");
-                     hr = "5.5 Hrs";
-                     alert("Your Hours would be Changed to " + hr);
+                     hrs = "5.5 Hrs";
+                     alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                      var ttlPay = 150.00;
                      $('#PerCleaning').html("150,00 €");
-                     hr = "6 Hrs";
-                     alert("Your Hours would be Changed to " + hr);
+                     hrs = "6 Hrs";
+                     alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 87.50;
                     $('#PerCleaning').html("87,50 €");
                 }
             }
-            else if (hr == "4.0 Hrs") {
+            else if (hrs == "4.0 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 112.50;
                     $('#PerCleaning').html("112,50 €");
-                    hr = "4.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "4.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 125.00;
                     $('#PerCleaning').html("125,00 €");
-                    hr = "5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 137.50;
                     $('#PerCleaning').html("137,50 €");
-                    hr = "5.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "5.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 150.00;
                     $('#PerCleaning').html("150,00 €");
-                    hr = "6 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "6 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 162.50;
                     $('#PerCleaning').html("162,50 €");
-                    hr = "6.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "6.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 100.00;
                     $('#PerCleaning').html("100,00 €");
                 }
             }
-            else if (hr == "4.5 Hrs") {
+            else if (hrs == "4.5 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 125.00;
                     $('#PerCleaning').html("125,00 €");
-                    hr = "5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 137.50;
                     $('#PerCleaning').html("137,50 €");
-                    hr = "5.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "5.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 150.00;
                     $('#PerCleaning').html("150,00 €");
-                    hr = "6 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "6 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 162.50;
                     $('#PerCleaning').html("162,50 €");
-                    hr = "6.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "6.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 175.00;
                     $('#PerCleaning').html("175,00 €");
-                    hr = "7 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 112.50;
                     $('#PerCleaning').html("112,50 €");
                 }
             }
-            else if (hr == "5.0 Hrs") {
+            else if (hrs == "5.0 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 137.50;
                     $('#PerCleaning').html("137,50 €");
-                    hr = "5.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "5.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 150.00;
                     $('#PerCleaning').html("150,00 €");
-                    hr = "6 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "6 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 162.50;
                     $('#PerCleaning').html("162,50 €");
-                    hr = "6.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "6.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 175.00;
                     $('#PerCleaning').html("175,00 €");
-                    hr = "7 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 187.50;
                     $('#PerCleaning').html("187,50 €");
-                    hr = "7.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 125.00;
                     $('#PerCleaning').html("125,00 €");
-                    hr = "8 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
                 }
             }
-            else if (hr == "5.5 Hrs") {
+            else if (hrs == "5.5 Hrs") {
                 if(extraserv == 1) {
                     var ttlPay = 150.00;
                     $('#PerCleaning').html("150,00 €");
-                    hr = "6 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "6 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 162.50;
                     $('#PerCleaning').html("162,50 €");
-                    hr = "6.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "6.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 175.00;
                     $('#PerCleaning').html("175,00 €");
-                    hr = "7 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 187.50;
                     $('#PerCleaning').html("187,50 €");
-                    hr = "7.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 200.00;
                     $('#PerCleaning').html("200,00 €");
-                    hr = "8 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 137.50;
                     $('#PerCleaning').html("137,50 €");
                 }
             }
-            else if (hr == "6.0 Hrs") {
+            else if (hrs == "6.0 Hrs") {
                 if(extraserv == 1) {
                     var ttlPay = 162.50;
                     $('#PerCleaning').html("162,50 €");
-                    hr = "6.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "6.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 175.00;
                     $('#PerCleaning').html("175,00 €");
-                    hr = "7 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 187.50;
                     $('#PerCleaning').html("187,50 €");
-                    hr = "7.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 200.00;
                     $('#PerCleaning').html("200,00 €");
-                    hr = "8 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 212.50;
                     $('#PerCleaning').html("212,50 €");
-                    hr = "8.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 150.00;
                     $('#PerCleaning').html("150,00 €");
                 }
             }
-            else if (hr == "6.5 Hrs") {
+            else if (hrs == "6.5 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 175.00;
                     $('#PerCleaning').html("175,00 €");
-                    hr = "7 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 187.50;
                     $('#PerCleaning').html("187,50 €");
-                    hr = "7.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 200.00;
                     $('#PerCleaning').html("200,00 €");
-                    hr = "8 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 212.50;
                     $('#PerCleaning').html("212,50 €");
-                    hr = "8.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 225.00;
                     $('#PerCleaning').html("225,00 €");
-                    hr = "9 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 162.50;
                     $('#PerCleaning').html("162,50 €");
                 }
             }
-            else if (hr == "7.0 Hrs") {
+            else if (hrs == "7.0 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 187.50;
                     $('#PerCleaning').html("187,50 €");
-                    hr = "7.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "7.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 200.00;
                     $('#PerCleaning').html("200,00 €");
-                    hr = "8 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 212.50;
                     $('#PerCleaning').html("212,50 €");
-                    hr = "8.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 225.00;
                     $('#PerCleaning').html("225,00 €");
-                    hr = "9 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 237.00;
                     $('#PerCleaning').html("237,50 €");
-                    hr = "9.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 175.00;
                     $('#PerCleaning').html("175,00 €");
                 }
             }
-            else if (hr == "7.5 Hrs") {
+            else if (hrs == "7.5 Hrs") {
                 if  (extraserv == 1) {
                     var ttlPay = 200.00;
                     $('#PerCleaning').html("200,00 €");
-                    hr = "8 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 212.50;
                     $('#PerCleaning').html("212,50 €");
-                    hr = "8.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 225.00;
                     $('#PerCleaning').html("225,00 €");
-                    hr = "9 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 237.50;
                     $('#PerCleaning').html("237,50 €");
-                    hr = "9.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 250.00;
                     $('#PerCleaning').html("250,00 €");
-                    hr = "10 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 187.50;
                     $('#PerCleaning').html("187,50 €");
                 }
             }
-            else if (hr == "8.0 Hrs") {
+            else if (hrs == "8.0 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 212.50;
                     $('#PerCleaning').html("212,50 €");
-                    hr = "8.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "8.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 225.00;
                     $('#PerCleaning').html("225,00 €");
-                    hr = "9 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 237.50;
                     $('#PerCleaning').html("237,50 €");
-                    hr = "9.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 250.00;
                     $('#PerCleaning').html("250,00 €");
-                    hr = "10 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 262.50;
                     $('#PerCleaning').html("262,50 €");
-                    hr = "10.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 200.00;
                     $('#PerCleaning').html("200,00 €");
                 }
             }
-            else if (hr == "8.5 Hrs") {
+            else if (hrs == "8.5 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 225.00;
                     $('#PerCleaning').html("225,00 €");
-                    hr = "9 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 237.50;
                     $('#PerCleaning').html("237,50 €");
-                    hr = "9.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 250.00;
                     $('#PerCleaning').html("250,00 €");
-                    hr = "10 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 262.50;
                     $('#PerCleaning').html("262,50 €");
-                    hr = "10.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 275.00;
                     $('#PerCleaning').html("275,00 €");
-                    hr = "11 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 212.50;
                     $('#PerCleaning').html("212,50 €");
                 }
             }
-            else if (hr == "9.0 Hrs") {
+            else if (hrs == "9.0 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 237.50;
                     $('#PerCleaning').html("237,50 €");
-                    hr = "9.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "9.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 250.00;
                     $('#PerCleaning').html("250,00 €");
-                    hr = "10 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 262.50;
                     $('#PerCleaning').html("262,50 €");
-                    hr = "10.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 275.00;
                     $('#PerCleaning').html("275,00 €");
-                    hr = "11 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 287.50;
                     $('#PerCleaning').html("287,50 €");
-                    hr = "11.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 225.00;
                     $('#PerCleaning').html("225,00 €");
                 }
             }
-            else if (hr == "9.5 Hrs") {
+            else if (hrs == "9.5 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 250.00;
                     $('#PerCleaning').html("250,00 €");
-                    hr = "10 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 262.50;
                     $('#PerCleaning').html("262,50 €");
-                    hr = "10.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 275.00;
                     $('#PerCleaning').html("275,00 €");
-                    hr = "11 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 287.50;
                     $('#PerCleaning').html("287,50 €");
-                    hr = "11.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 300.00;
                     $('#PerCleaning').html("300.00 €");
-                    hr = "12 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 237.50;
                     $('#PerCleaning').html("237,50 €");
                 }
             }
-            else if (hr == "10.0 Hrs") {
+            else if (hrs == "10.0 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 262.50;
                     $('#PerCleaning').html("262,50 €");
-                    hr = "10.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "10.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 275.00;
                     $('#PerCleaning').html("275,00 €");
-                    hr = "11 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 287.50;
                     $('#PerCleaning').html("287,50 €");
-                    hr = "11.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 300.00;
                     $('#PerCleaning').html("300.00 €");
-                    hr = "12 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 312.50;
                     $('#PerCleaning').html("312,50 €");
-                    hr = "12.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 250.00;
                     $('#PerCleaning').html("250,00 €");
                 }
             }
-            else if (hr == "10.5 Hrs") {
+            else if (hrs == "10.5 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 275.00;
                     $('#PerCleaning').html("275,00 €");
-                    hr = "11 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 287.50;
                     $('#PerCleaning').html("287,50 €");
-                    hr = "11.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 300.00;
                     $('#PerCleaning').html("300.00 €");
-                    hr = "12 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 312.50;
                     $('#PerCleaning').html("312,50 €");
-                    hr = "12.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 325.00;
                     $('#PerCleaning').html("325,00 €");
-                    hr = "13 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "13 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else {
                     var ttlPay = 262.50;
                     $('#PerCleaning').html("262,50 €");
                 }
             }
-            else if (hr == "11.0 Hrs") {
+            else if (hrs == "11.0 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 287.50;
                     $('#PerCleaning').html("287,50 €");
-                    hr = "11.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "11.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 300.00;
                     $('#PerCleaning').html("300.00 €");
-                    hr = "12 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 312.50;
                     $('#PerCleaning').html("312,50 €");
-                    hr = "12.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 325.00;
                     $('#PerCleaning').html("325,00 €");
-                    hr = "13 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "13 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 5) {
                     var ttlPay = 337.00;
@@ -976,24 +975,24 @@
                     $('#PerCleaning').html("275,00 €");
                 }
             }
-            else if (hr == "11.5 Hrs") {
+            else if (hrs == "11.5 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 300.00;
                     $('#PerCleaning').html("300.00 €");
-                    hr = "12 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 312.50;
                     $('#PerCleaning').html("312,50 €");
-                    hr = "12.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 325.00;
                     $('#PerCleaning').html("325,00 €");
-                    hr = "13 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "13 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 4) {
                     var ttlPay = 337.00;
@@ -1010,18 +1009,18 @@
                     $('#PerCleaning').html("287,50 €");
                 }
             }
-            else if (hr == "12.0 Hrs") {
+            else if (hrs == "12.0 Hrs") {
                 if (extraserv == 1) {
                     var ttlPay = 312.50;
                     $('#PerCleaning').html("312,50 €");
-                    hr = "12.5 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "12.5 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 2) {
                     var ttlPay = 325.00;
                     $('#PerCleaning').html("325,00 €");
-                    hr = "13 Hrs";
-                    alert("Your Hours would be Changed to " + hr);
+                    hrs = "13 Hrs";
+                    alert("Your Hours would be Changed to " + hrs);
                 }
                 else if (extraserv == 3) {
                     var ttlPay = 337.00;
@@ -1045,8 +1044,18 @@
             }
             var totalPay = ttlPay;
 
-            
-            bookings.Cleandate = $("#datePicker").val();
+            var st = $('#ddlStartingTime').find(":selected").val();
+            var time = $('#ddlStartingTime').find(":selected").text();
+
+            var date = $("#datePicker").val();
+            //var  = new Date(date + ' ' + time);
+            var dateandtime = date.concat(' '+time);
+            alert(dateandtime);
+
+            //alert(dateandtime + "dcaddsad");
+
+            bookings.Cleandate = dateandtime;
+            alert(dateandtime + "booking");
             bookings.Startingtime = st;
             bookings.Hours = hr;
             bookings.Comments = cmt;

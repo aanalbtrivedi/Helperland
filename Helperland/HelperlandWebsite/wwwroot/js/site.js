@@ -201,9 +201,7 @@ function Tab3Click() {
     $('#tabContent1').removeClass("fordisplay").addClass("fornonedisplay");
     $('#tabContent4').removeClass("fordisplay").addClass("fornonedisplay");
     $('#tabContent3').html("Loding Address")
-        //.load("/BookService/ListAddressViewModel")
         .load("/BookService/GetAddress");
-    /*.load('@Url.Action("GetAddress","BookService")');*/
 }
 
 function Tab4Click() {
@@ -222,38 +220,31 @@ function Tab4Click() {
 function addAddress() {
     $("#test").removeClass("fornonedisplay").addClass("fordisplay");
     $("#addnewadd").addClass("fornonedisplay").addClass("addnewaddtab");
-
 }
 
 
-$(document).ready(function () {
+function Tab2CustClick() {
+    $("#tab2").addClass("active-tab");
+    $("#tab1").removeClass("active-tab");
+    $("#tab3").removeClass("active-tab");
 
-    $("#btncheck").on("click", function () {
-        var bookings = {};
-        bookings.PostalCode = $("#txtPostalCode").val();
-        //alert(bookings.PostalCode);
-        $.ajax({
-            url: '@Url.Action("Book_now")',
-            type: 'post',
-            data: bookings,
-            success: function (response) {
+    $('#tabContent2').removeClass("fornonedisplay").addClass("fordisplay");
+    $('#tabContent1').removeClass("fordisplay").addClass("fornonedisplay");
+    $('#tabContent3').removeClass("fordisplay").addClass("fornonedisplay");
+    $('#tabContent2').html("Loding Address")
+        .load("/Customer/GetAddressCust");
 
-                if (response) {
-                    alert("success");
-                    $("#successMessage").show();
-                    var pr = bookings.PostalCode;
-                    $("#successMessage").html(pr).fadeOut(5000);
-                }
-            },
-            failure: function (response) {
-                alert("failure");
-            },
-            error: function (response) {
-                alert("Something went Wrong!!");
-            }
-        })
-    })
+}
 
-});
+function Tab3CustClick() {
+    $("#tab3").addClass("active-tab");
+    $("#tab2").removeClass("active-tab");
+    $("#tab1").removeClass("active-tab");
 
+    $('#tabContent3').removeClass("fornonedisplay").addClass("fordisplay");
+    $('#tabContent2').removeClass("fordisplay").addClass("fornonedisplay");
+    $('#tabContent1').removeClass("fordisplay").addClass("fornonedisplay");
+    $('#tabContent3').html("Loding")
+        .load("/Customer/ChangePassword");
+}
 

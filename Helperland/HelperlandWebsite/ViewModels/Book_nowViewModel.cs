@@ -12,8 +12,8 @@ namespace HelperlandWebsite.ViewModels
         [DataType(DataType.Text)]
         public string PostalCode { get; set; }
         public DateTime Cleandate { get; set; }
-        public DateTime Startingtime { get; set; }
-        public float Hours { get; set; }
+        public float Startingtime { get; set; }
+        public double Hours { get; set; }
         public int Extraservice { get; set; }
         public string Comments { get; set; }
         public int Pets { get; set; }

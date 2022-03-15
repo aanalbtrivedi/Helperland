@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using HelperlandWebsite.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using HelperlandWebsite.ViewModels;
 
 #nullable disable
 
@@ -353,5 +354,12 @@ namespace HelperlandWebsite.Data
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<HelperlandWebsite.ViewModels.CustomerDashboardViewModel> CustomerDashboardViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.CustomerHistoryViewModel> CustomerHistoryViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.MysettingsViewModel> MysettingsViewModel { get; set; }
+
     }
 }

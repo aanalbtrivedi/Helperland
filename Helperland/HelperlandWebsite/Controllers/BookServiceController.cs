@@ -51,7 +51,7 @@ namespace HelperlandWebsite.Controllers
                 serviceRequest.CreatedDate = DateTime.Now.Date;
                 serviceRequest.TotalCost = bookings.TotalPayment;
                 serviceRequest.ServiceHours = bookings.Hours;
-                serviceRequest.ZipCode = bookings.PostalCode;
+                //serviceRequest.ZipCode = bookings.PostalCode;
                 serviceRequest.Discount = discount;
                 _helperlandContext.ServiceRequests.Add(serviceRequest);
                 _helperlandContext.SaveChanges();
@@ -146,26 +146,7 @@ namespace HelperlandWebsite.Controllers
             return View(addresslistdata);
         }
 
-        //[HttpPost]
-        //public IActionResult GetAddress(ListAddressViewModel listAddressViewModel)
-        //{
-        //    if (listAddressViewModel != null)
-        //    {
-        //        UserAddress userAddress = new UserAddress();
-        //        userAddress.UserId = userID;
-        //        userAddress.AddressLine1 = listAddressViewModel.AddressLine1;
-        //        //userAddress.AddressLine2 = listAddressViewModel.AddressLine2;
-        //        userAddress.City = listAddressViewModel.City;
-        //        userAddress.PostalCode = listAddressViewModel.PostalCodeUser;
-        //        userAddress.Mobile = listAddressViewModel.Mobile;
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        return Content("Problem");
-        //    }
-        //}
-
+       
 
 
 
