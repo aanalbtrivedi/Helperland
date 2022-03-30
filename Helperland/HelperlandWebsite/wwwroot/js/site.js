@@ -201,7 +201,7 @@ function Tab3Click() {
     $('#tabContent1').removeClass("fordisplay").addClass("fornonedisplay");
     $('#tabContent4').removeClass("fordisplay").addClass("fornonedisplay");
     $('#tabContent3').html("Loding Address")
-        .load("/BookService/GetAddress");
+        .load("/BookNow/GetAddress");
 }
 
 function Tab4Click() {
@@ -246,5 +246,41 @@ function Tab3CustClick() {
     $('#tabContent1').removeClass("fordisplay").addClass("fornonedisplay");
     $('#tabContent3').html("Loding")
         .load("/Customer/ChangePassword");
+}
+
+function SPTab1Click() {
+    $("#SPtab1").addClass("active-tab");
+    $("#SPtab2").removeClass("active-tab");
+
+    $('#SPtabContent1').removeClass("fornonedisplay").addClass("fordisplay");
+    $('#SPtabContent2').removeClass("fordisplay").addClass("fornonedisplay");
+}
+function SPTab2Click() {
+    $("#SPtab2").addClass("active-tab");
+    $("#SPtab1").removeClass("active-tab");
+
+    $('#SPtabContent2').removeClass("fornonedisplay").addClass("fordisplay");
+    $('#SPtabContent1').removeClass("fordisplay").addClass("fornonedisplay");
+    $('#SPtabContent2').html("Loding Address")
+        .load("/ServiceProvider/SPChangePassword");
+
+}
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }
 

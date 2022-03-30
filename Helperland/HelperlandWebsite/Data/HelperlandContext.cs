@@ -361,5 +361,27 @@ namespace HelperlandWebsite.Data
 
         public DbSet<HelperlandWebsite.ViewModels.MysettingsViewModel> MysettingsViewModel { get; set; }
 
+        public DbSet<HelperlandWebsite.ViewModels.UpcomingServiceViewModel> UpcomingServiceViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.NewServiceRequestsViewModels> NewServiceRequestsViewModels { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.SPServiceHistoryViewModel> SPServiceHistoryViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.SPMySettingsViewModel> SPMySettingsViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.ServiceRequestsAdminViewModel> ServiceRequestsAdminViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.UserManagementViewModel> UserManagementViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.SPChngPasswordViewModel> SPChngPasswordViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.LoginViewModel> LoginViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.Cust_SignupViewModel> Cust_SignupViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.UserResgistrtionViewModel> UserResgistrtionViewModel { get; set; }
+
+        public DbSet<HelperlandWebsite.ViewModels.ResetPasswordViewModel> ResetPasswordViewModel { get; set; }
+
     }
 }

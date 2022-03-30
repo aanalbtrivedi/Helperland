@@ -1,0 +1,1125 @@
+﻿@model HelperlandWebsite.ViewModels.Book_nowViewModel
+
+@{
+    ViewData["Title"] = "Book now";
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
+}
+
+
+<h1 class="book_Heading">Set up your cleaning service</h1>
+<img src="~/img/stone.png" class="img-responsive stone">
+@ViewBag.userId
+@ViewBag.email
+<div class="container">
+    <div class="row book_Service">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div active-tab tab-color cursor-change" id="tab1" onclick="Tab1Click()">
+                    Setup Service
+                </div>
+                @if (ViewBag.valid == 1)
+                {
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color cursor-change" id="tab2" onclick="Tab2Click()">
+                        Schedual & Plan
+                    </div>
+                    @if (ViewBag.valid == 2)
+                    {
+                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color cursor-change" id="tab3" onclick="Tab3Click()">
+                            Your Details
+                        </div>
+                        @if (ViewBag.valid == 3)
+                        {
+                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color cursor-change" id="tab4" onclick="Tab4Click()">
+                                Make Payment
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color" id="tab4">
+                                Make Payment
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color" id="tab3">
+                            Your Details
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color" id="tab4">
+                            Make Payment
+                        </div>
+                    }
+
+                }
+                else
+                {
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color" id="tab2" onclick="Tab2Click()">
+                        Schedual & Plan
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color" id="tab3" onclick="Tab3Click()">
+                        Your Details
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 book_div tab-color" id="tab4" onclick="Tab4Click()">
+                        Make Payment
+                    </div>
+                }
+
+            </div>
+
+            <div>
+                <form>
+                    <div id="tabContent1" class="fordisplay">
+                        <label asp-for="PostalCode" class="control-label lblPostalCode">Enter your Postal Code</label>
+                        <input asp-for="PostalCode" placeholder="Postal code" id="txtPostalCode" class="form-control PostalCode" required />
+                        <span asp-validation-for="PostalCode" class="text-danger" id="errorPostalCode"></span>
+                        <input type="button" id="btncheck" name="" value="Check Availability" class="btnCheckavail" onclick="chk()" />
+                    </div>
+
+                    <div id="tabContent2" class="fornonedisplay">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="lblPostalCode" asp-for="Cleandate">When do you need the cleaner?</label>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="lblPostalCode" asp-for="Startingtime">How long do you need your cleaner to stay?</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span asp-validation-for="Cleandate" class="text-danger"></span>
+                                <input type="date" asp-for="Cleandate"
+                                       id="datePicker"
+                                       name="Tdate"
+                                       class="form-control clean-date"
+                                       value="<%=DateTime.Now.ToString(" dd-mm-yyyy")%>
+
+                                <select asp-for="Startingtime" id="ddlStartingTime" class="form-control inline clean-time">
+                                    <option value="8" selected>8:00</option>
+                                    <option value="8.5">8:30</option>
+                                    <option value="9">9:00</option>
+                                    <option value="9.5">9:30</option>
+                                    <option value="10">10:00</option>
+                                    <option value="10.5">10:30</option>
+                                    <option value="11">11:00</option>
+                                    <option value="11.5">11:30</option>
+                                    <option value="12">12:00</option>
+                                    <option value="12.5">12:30</option>
+                                    <option value="13">13:00</option>
+                                    <option value="13.5">13:30</option>
+                                    <option value="14">14:00</option>
+                                    <option value="14.5">14:30</option>
+                                    <option value="15">15:00</option>
+                                    <option value="15.5">15:30</option>
+                                    <option value="16">16:00</option>
+                                    <option value="16.5">16:30</option>
+                                    <option value="17">17:00</option>
+                                    <option value="17.5">17:30</option>
+                                    <option value="18">18:00</option>
+                                </select>
+                                <span asp-validation-for="Startingtime" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <select asp-for="Hours" class="form-control inline clean-hr ddlHours" id="ddlHours">
+                                    <option value="3" selected>3.0 Hrs</option>
+                                    <option value="3.5">3.5 Hrs</option>
+                                    <option value="4">4.0 Hrs</option>
+                                    <option value="4.5">4.5 Hrs</option>
+                                    <option value="5">5.0 Hrs</option>
+                                    <option value="5.5">5.5 Hrs</option>
+                                    <option value="6">6.0 Hrs</option>
+                                    <option value="6.5">6.5 Hrs</option>
+                                    <option value="7">7.0 Hrs</option>
+                                    <option value="7.5">7.5 Hrs</option>
+                                    <option value="8">8.0 Hrs</option>
+                                    <option value="8.5">8.5 Hrs</option>
+                                    <option value="9">9.0 Hrs</option>
+                                    <option value="9.5">9.5 Hrs</option>
+                                    <option value="10">10.0 Hrs</option>
+                                    <option value="10.5">10.5 Hrs</option>
+                                    <option value="11">11.0 Hrs</option>
+                                    <option value="11.5">11.5 Hrs</option>
+                                    <option value="12">12.0 Hrs</option>
+                                </select>
+                                <span asp-validation-for="Hours" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <label>Extra Services</label>
+                        <div class="text-center">
+                            <div class="justify-content-center align-self-center">
+                                <div class="prices-extra-services-dis">
+                                    <label class=" book-extra-services">
+                                        <input type="checkbox" name="extra" class="ng-untouched ng-pristine ng-valid" value="Inside cabinets 30 min">
+                                        <div class="img-container">
+                                            <div class="img-wrapper">
+                                                <img src="~/img/cabinet.png">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <p class="prices-services-pics-desc">Inside cabinets</p>
+                                </div>
+                                <div class="prices-extra-services-dis">
+                                    <label class=" book-extra-services">
+                                        <input type="checkbox" name="extra" class="ng-untouched ng-pristine ng-valid hidden" value="Inside fridge 30 min">
+                                        <div class="img-container">
+                                            <div class="img-wrapper">
+                                                <img src="~/img/fridge.png">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <p class="prices-services-pics-desc">Inside fridge</p>
+                                </div>
+                                <div class="prices-extra-services-dis">
+                                    <label class=" book-extra-services">
+                                        <input type="checkbox" name="extra" class="ng-untouched ng-pristine ng-valid" value="Inside oven    30 min">
+                                        <div class="img-container">
+                                            <div class="img-wrapper">
+                                                <img src="~/img/oven.png">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <p class="prices-services-pics-desc">Inside oven</p>
+                                </div>
+                                <div class="prices-extra-services-dis">
+                                    <label class=" book-extra-services">
+                                        <input type="checkbox" name="extra" class="ng-untouched ng-pristine ng-valid" value="Laundry wash & dry    30 min">
+                                        <div class="img-container">
+                                            <div class="img-wrapper">
+                                                <img src="~/img/dry.png">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <p class="prices-services-pics-desc">Laundry wash & dry</p>
+                                </div>
+                                <div class="prices-extra-services-dis">
+                                    <label class=" book-extra-services">
+                                        <input type="checkbox" name="extra" class="ng-untouched ng-pristine ng-valid" value="Interior windows   30 min">
+                                        <div class="img-container">
+                                            <div class="img-wrapper">
+                                                <img src="~/img/window.png">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <p class="prices-services-pics-desc">Interior windows</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <label asp-for="Comments">Comments</label>
+                        <textarea asp-for="Comments" placeholder="Comments" id="cmnt" rows="3" class="form-control plan-cmnt"></textarea>
+                        <span asp-validation-for="Comments" class="text-danger"></span>
+                        <input type="Checkbox" name="" id="pet-check" value="1" />
+                        <label for="pet-check">I have pets at  home</label>
+                        <hr>
+                        <input type="button" value="Continue" class="btncontinue" onclick="btnschedule()" />
+
+                    </div>
+
+                    <div id="tabContent3" class="fornonedisplay">
+                    </div>
+
+                    <div id="tabContent4" class="fornonedisplay">
+                        <label class="lblPostalCode">Promo Code (optional)</label>
+                        <input type="text" name="" placeholder="Promo Code (optional)" class="form-control promo-code">
+                        <input type="button" name="" value="Apply" class="promo-applybtn" onclick="btnServiceDone()">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card PaymentSumCard">
+                <div class="">
+                    <h5 class="PaymentHeading">Payment Summery</h5>
+                    <table>
+                        <tr>
+                            <td>
+                                Duration : <span id="displayDate"></span>
+                                <span id="displayTime"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Basic : <span id="displayHours">0 hrs</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p id="displayExtra"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Per Cleaning : <span id="PerCleaning"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('datePicker').valueAsDate = new Date();
+    var bookService = {};
+    var addr1;
+    var date;
+    var hr;
+    var hrs;
+    var cmt;
+    var pt;
+    var extraserv = 0;
+    var favorite = [];
+    var Exhr;
+    var ttlPay;
+    var totalPay;
+    var st;
+    var time;
+    var dateandtime;
+    var ttlhr;
+    var PostalCodeUser;
+    var ct;
+    var addr2;
+
+    function chk() {
+        if ($("#txtPostalCode")[0].checkValidity()) {
+            bookService.PostalCode = $("#txtPostalCode").val();
+            //alert(bookService.PostalCode);
+            $("#tab2").click();
+        }
+        else {
+            $("#errorPostalCode").html("Please Enter Postal Code");
+        }
+    }
+
+    function btnschedule() {
+        //debugger;
+        date = $("#datePicker").val();
+        hr = $('#ddlHours').find(":selected").val();
+        $("#displayHours").html(hr);
+
+        hrs = $('#ddlHours').find(":selected").text();
+        cmt = $("#cmnt").val();
+        //var pt = $("#pet-check").val();
+
+        if ($('#pet-check').is(":checked")) {
+            pt = ($('#pet-check').val());
+        }
+        else {
+            pt = 0;
+        }
+
+        var extraserv = 0;
+        var favorite = [];
+        $.each($("input[name='extra']:checked"), function () {
+            favorite.push($(this).val());
+            $("#displayExtra").html(favorite + " , ");
+            extraserv++;
+        });
+        if (extraserv == 1) {
+            Exhr = 0.5;
+        }
+        else if (extraserv == 2) {
+            Exhr = 1;
+        }
+        else if (extraserv == 3) {
+            Exhr = 1.5;
+        }
+        else if (extraserv == 4) {
+            Exhr = 2;
+        }
+        else if (extraserv == 5) {
+            Exhr = 2.5;
+        }
+        else {
+            Exhr = 0;
+        }
+
+        if (hrs == "3.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 87.50;
+                $('#PerCleaning').html("87,50 €");
+                hrs = "3.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 100.00;
+                $('#PerCleaning').html("100,00 €");
+                hrs = "4 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 112.50;
+                $('#PerCleaning').html("112,50 €");
+                hrs = "4.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 125.00;
+                $('#PerCleaning').html("125,00 €");
+                hrs = "5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 137.50;
+                $('#PerCleaning').html("137,50 €");
+                hrs = "5.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 75.00;
+                $('#PerCleaning').html("75 €");
+            }
+
+        }
+        else if (hrs == "3.5 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 100.00;
+                $('#PerCleaning').html("100,00 €");
+                hrs = "4 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 112.50;
+                $('#PerCleaning').html("112,50 €");
+                hrs = "4.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 125.00;
+                $('#PerCleaning').html("125,00 €");
+                hrs = "5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 137.50;
+                $('#PerCleaning').html("137,50 €");
+                hrs = "5.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 150.00;
+                $('#PerCleaning').html("150,00 €");
+                hrs = "6 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 87.50;
+                $('#PerCleaning').html("87,50 €");
+            }
+        }
+        else if (hrs == "4.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 112.50;
+                $('#PerCleaning').html("112,50 €");
+                hrs = "4.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 125.00;
+                $('#PerCleaning').html("125,00 €");
+                hrs = "5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 137.50;
+                $('#PerCleaning').html("137,50 €");
+                hrs = "5.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 150.00;
+                $('#PerCleaning').html("150,00 €");
+                hrs = "6 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 162.50;
+                $('#PerCleaning').html("162,50 €");
+                hrs = "6.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 100.00;
+                $('#PerCleaning').html("100,00 €");
+            }
+        }
+        else if (hrs == "4.5 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 125.00;
+                $('#PerCleaning').html("125,00 €");
+                hrs = "5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 137.50;
+                $('#PerCleaning').html("137,50 €");
+                hrs = "5.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 150.00;
+                $('#PerCleaning').html("150,00 €");
+                hrs = "6 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 162.50;
+                $('#PerCleaning').html("162,50 €");
+                hrs = "6.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 175.00;
+                $('#PerCleaning').html("175,00 €");
+                hrs = "7 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 112.50;
+                $('#PerCleaning').html("112,50 €");
+            }
+        }
+        else if (hrs == "5.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 137.50;
+                $('#PerCleaning').html("137,50 €");
+                hrs = "5.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 150.00;
+                $('#PerCleaning').html("150,00 €");
+                hrs = "6 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 162.50;
+                $('#PerCleaning').html("162,50 €");
+                hrs = "6.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 175.00;
+                $('#PerCleaning').html("175,00 €");
+                hrs = "7 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 187.50;
+                $('#PerCleaning').html("187,50 €");
+                hrs = "7.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 125.00;
+                $('#PerCleaning').html("125,00 €");
+            }
+        }
+        else if (hrs == "5.5 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 150.00;
+                $('#PerCleaning').html("150,00 €");
+                hrs = "6 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 162.50;
+                $('#PerCleaning').html("162,50 €");
+                hrs = "6.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 175.00;
+                $('#PerCleaning').html("175,00 €");
+                hrs = "7 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 187.50;
+                $('#PerCleaning').html("187,50 €");
+                hrs = "7.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 200.00;
+                $('#PerCleaning').html("200,00 €");
+                hrs = "8 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 137.50;
+                $('#PerCleaning').html("137,50 €");
+            }
+        }
+        else if (hrs == "6.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 162.50;
+                $('#PerCleaning').html("162,50 €");
+                hrs = "6.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 175.00;
+                $('#PerCleaning').html("175,00 €");
+                hrs = "7 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 187.50;
+                $('#PerCleaning').html("187,50 €");
+                hrs = "7.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 200.00;
+                $('#PerCleaning').html("200,00 €");
+                hrs = "8 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 212.50;
+                $('#PerCleaning').html("212,50 €");
+                hrs = "8.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 150.00;
+                $('#PerCleaning').html("150,00 €");
+            }
+        }
+        else if (hrs == "6.5 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 175.00;
+                $('#PerCleaning').html("175,00 €");
+                hrs = "7 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 187.50;
+                $('#PerCleaning').html("187,50 €");
+                hrs = "7.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 200.00;
+                $('#PerCleaning').html("200,00 €");
+                hrs = "8 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 212.50;
+                $('#PerCleaning').html("212,50 €");
+                hrs = "8.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 225.00;
+                $('#PerCleaning').html("225,00 €");
+                hrs = "9 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 162.50;
+                $('#PerCleaning').html("162,50 €");
+            }
+        }
+        else if (hrs == "7.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 187.50;
+                $('#PerCleaning').html("187,50 €");
+                hrs = "7.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 200.00;
+                $('#PerCleaning').html("200,00 €");
+                hrs = "8 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 212.50;
+                $('#PerCleaning').html("212,50 €");
+                hrs = "8.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 225.00;
+                $('#PerCleaning').html("225,00 €");
+                hrs = "9 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 237.00;
+                $('#PerCleaning').html("237,50 €");
+                hrs = "9.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 175.00;
+                $('#PerCleaning').html("175,00 €");
+            }
+        }
+        else if (hrs == "7.5 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 200.00;
+                $('#PerCleaning').html("200,00 €");
+                hrs = "8 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 212.50;
+                $('#PerCleaning').html("212,50 €");
+                hrs = "8.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 225.00;
+                $('#PerCleaning').html("225,00 €");
+                hrs = "9 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 237.50;
+                $('#PerCleaning').html("237,50 €");
+                hrs = "9.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 250.00;
+                $('#PerCleaning').html("250,00 €");
+                hrs = "10 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 187.50;
+                $('#PerCleaning').html("187,50 €");
+            }
+        }
+        else if (hrs == "8.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 212.50;
+                $('#PerCleaning').html("212,50 €");
+                hrs = "8.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 225.00;
+                $('#PerCleaning').html("225,00 €");
+                hrs = "9 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 237.50;
+                $('#PerCleaning').html("237,50 €");
+                hrs = "9.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 250.00;
+                $('#PerCleaning').html("250,00 €");
+                hrs = "10 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 262.50;
+                $('#PerCleaning').html("262,50 €");
+                hrs = "10.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 200.00;
+                $('#PerCleaning').html("200,00 €");
+            }
+        }
+        else if (hrs == "8.5 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 225.00;
+                $('#PerCleaning').html("225,00 €");
+                hrs = "9 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 237.50;
+                $('#PerCleaning').html("237,50 €");
+                hrs = "9.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 250.00;
+                $('#PerCleaning').html("250,00 €");
+                hrs = "10 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 262.50;
+                $('#PerCleaning').html("262,50 €");
+                hrs = "10.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 275.00;
+                $('#PerCleaning').html("275,00 €");
+                hrs = "11 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 212.50;
+                $('#PerCleaning').html("212,50 €");
+            }
+        }
+        else if (hrs == "9.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 237.50;
+                $('#PerCleaning').html("237,50 €");
+                hrs = "9.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 250.00;
+                $('#PerCleaning').html("250,00 €");
+                hrs = "10 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 262.50;
+                $('#PerCleaning').html("262,50 €");
+                hrs = "10.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 275.00;
+                $('#PerCleaning').html("275,00 €");
+                hrs = "11 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 287.50;
+                $('#PerCleaning').html("287,50 €");
+                hrs = "11.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 225.00;
+                $('#PerCleaning').html("225,00 €");
+            }
+        }
+        else if (hrs == "9.5 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 250.00;
+                $('#PerCleaning').html("250,00 €");
+                hrs = "10 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 262.50;
+                $('#PerCleaning').html("262,50 €");
+                hrs = "10.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 275.00;
+                $('#PerCleaning').html("275,00 €");
+                hrs = "11 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 287.50;
+                $('#PerCleaning').html("287,50 €");
+                hrs = "11.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 300.00;
+                $('#PerCleaning').html("300.00 €");
+                hrs = "12 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 237.50;
+                $('#PerCleaning').html("237,50 €");
+            }
+        }
+        else if (hrs == "10.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 262.50;
+                $('#PerCleaning').html("262,50 €");
+                hrs = "10.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 275.00;
+                $('#PerCleaning').html("275,00 €");
+                hrs = "11 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 287.50;
+                $('#PerCleaning').html("287,50 €");
+                hrs = "11.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 300.00;
+                $('#PerCleaning').html("300.00 €");
+                hrs = "12 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 312.50;
+                $('#PerCleaning').html("312,50 €");
+                hrs = "12.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 250.00;
+                $('#PerCleaning').html("250,00 €");
+            }
+        }
+        else if (hrs == "10.5 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 275.00;
+                $('#PerCleaning').html("275,00 €");
+                hrs = "11 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 287.50;
+                $('#PerCleaning').html("287,50 €");
+                hrs = "11.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 300.00;
+                $('#PerCleaning').html("300.00 €");
+                hrs = "12 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 312.50;
+                $('#PerCleaning').html("312,50 €");
+                hrs = "12.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 325.00;
+                $('#PerCleaning').html("325,00 €");
+                hrs = "13 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else {
+                var ttlPay = 262.50;
+                $('#PerCleaning').html("262,50 €");
+            }
+        }
+        else if (hrs == "11.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 287.50;
+                $('#PerCleaning').html("287,50 €");
+                hrs = "11.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 300.00;
+                $('#PerCleaning').html("300.00 €");
+                hrs = "12 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 312.50;
+                $('#PerCleaning').html("312,50 €");
+                hrs = "12.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 325.00;
+                $('#PerCleaning').html("325,00 €");
+                hrs = "13 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 337.00;
+                $('#PerCleaning').html("337,50 €");
+                alert("Could not completed the service request, because service booking request is must be completed within 21:00 time");
+            }
+            else {
+                var ttlPay = 275.00;
+                $('#PerCleaning').html("275,00 €");
+            }
+        }
+        else if (hrs == "11.5 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 300.00;
+                $('#PerCleaning').html("300.00 €");
+                hrs = "12 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 312.50;
+                $('#PerCleaning').html("312,50 €");
+                hrs = "12.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 325.00;
+                $('#PerCleaning').html("325,00 €");
+                hrs = "13 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 337.00;
+                $('#PerCleaning').html("337,50 €");
+                alert("Could not completed the service request, because service booking request is must be completed within 21:00 time");
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 350.00;
+                $('#PerCleaning').html("350,00 €");
+                alert("Could not completed the service request, because service booking request is must be completed within 21:00 time");
+            }
+            else {
+                var ttlPay = 287.50;
+                $('#PerCleaning').html("287,50 €");
+            }
+        }
+        else if (hrs == "12.0 Hrs") {
+            if (extraserv == 1) {
+                var ttlPay = 312.50;
+                $('#PerCleaning').html("312,50 €");
+                hrs = "12.5 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 2) {
+                var ttlPay = 325.00;
+                $('#PerCleaning').html("325,00 €");
+                hrs = "13 Hrs";
+                alert("Your Hours would be Changed to " + hrs);
+            }
+            else if (extraserv == 3) {
+                var ttlPay = 337.00;
+                $('#PerCleaning').html("337,50 €");
+                alert("Could not completed the service request, because service booking request is must be completed within 21:00 time");
+            }
+            else if (extraserv == 4) {
+                var ttlPay = 350.00;
+                $('#PerCleaning').html("350,00 €");
+                alert("Could not completed the service request, because service booking request is must be completed within 21:00 time");
+            }
+            else if (extraserv == 5) {
+                var ttlPay = 362.00;
+                $('#PerCleaning').html("362,00 €");
+                alert("Could not completed the service request, because service booking request is must be completed within 21:00 time");
+            }
+            else {
+                var ttlPay = 300.00;
+                $('#PerCleaning').html("300,00 €");
+            }
+        }
+        totalPay = ttlPay;
+
+        st = $('#ddlStartingTime').find(":selected").val();
+        time = $('#ddlStartingTime').find(":selected").text();
+        dateandtime = date.concat(' ' + time);
+        ttlhr = parseFloat(hr) + parseFloat(Exhr);
+        $("#displayDate").html(bookings.Cleandate)
+        $("#displayTime").html(hr);
+        $("#tab3").click();
+
+        bookService.cleandate = dateandtime;
+        //bookService.ServiceHours = hr;
+        //bookService.ExtraHours = Exhr;
+        //bookService.SubTotal = ttlhr;
+        bookService.Comments = cmt;
+        bookService.hasPet = pt;
+        bookService.cleandate = date;
+        bookService.TotalCost = totalPay;
+        bookService.ServiceId = 1;
+        bookService.ServiceHourlyRate = 25;
+        bookService.Discount = 20;
+        bookService.Status = 1;
+        //alert(bookService.SubTotal);
+
+    }
+
+    function btnAddress() {
+        checkaddress = $("input[name='address']:checked").val();
+        bookService.AddressID = checkaddress;
+        //alert(bookService.AddressID);
+        $("#tab4").click();
+    }
+
+    function btnSaveAddress() {
+        var getadd = {};
+        addr1 = $("#stNo").val();
+        PostalCodeUser = $("#ptNo").val();
+        ct = $('#ddlCity').find(":selected").text();
+        if ($("#hsNo").val() != null) {
+            addr2 = $("#hsNo").val();
+            bookService.AddressLine2 = addr2;
+            getadd.AddressLine2 = addr2;
+        }
+        getadd.Mobile = $("#phno").val();
+        getadd.AddressLine1 = addr1;
+        getadd.PostalCodeUser = PostalCodeUser;
+        getadd.City = ct;
+
+        $.ajax({
+                url: '@Url.Action("GetAddress")',
+                type: 'post',
+            data: getadd,
+                success: function (response) {
+
+                    if (response) {
+                        $("#tab3").click();
+                    }
+                },
+                failure: function (response) {
+                    alert("failure");
+                },
+                error: function (response) {
+                    $("#tab3").click(); 
+                }
+            })
+    }
+
+    function btnCancelAddress() {
+        $("#test").removeClass("fordisplay").addClass("fornonedisplay");
+        $("#addnewadd").addClass("fornonedisplay").addClass("addnewaddtab");
+    }
+
+    function btnServiceDone() {
+        bookService.PostalCode = $("#txtPostalCode").val();
+        bookService.cleandate = dateandtime;
+        bookService.Hours = hr; 
+        bookService.ExtraHours = Exhr; 
+        bookService.SubTotal = ttlhr; 
+        bookService.Comments = cmt;
+        bookService.Pets = pt;
+        bookService.TotalPayment = totalPay;
+        bookService.ServiceId = 1;
+        bookService.ServiceHourlyRate = 25;
+        bookService.Discount = 20;
+        bookService.Status = 1; 
+        bookService.AddressID = checkaddress;
+
+        $.ajax({
+                url: '@Url.Action("BookNow")',
+                type: 'post',
+                data: bookService,
+                success: function (response) {
+
+                    if (response) {
+                        alert("Sucess");
+                        $("#tab1").click();
+                        //alert("Service has saved ! Click on next tab to save Address")
+                    }
+                },
+                failure: function (response) {
+                    alert("failure");
+                },
+                error: function (response) {
+                    alert("Something wrong")
+                }
+            })
+    }
+</script>

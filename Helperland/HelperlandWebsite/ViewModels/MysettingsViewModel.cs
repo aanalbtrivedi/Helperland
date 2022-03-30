@@ -15,7 +15,13 @@ namespace HelperlandWebsite.ViewModels
         public string Lastname { get; set; }
         public string Emailaddress { get; set; }
         public string MobileNumber { get; set; }
-        public int LanguageId { get; set; }
-        public DateTime Birthdate { get; set; }
+        public int? LanguageId { get; set; }
+        public DateTime? Birthdate { get; set; }
+        public int AddressId { get; set; }
+        public int chkforedit { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string City { get; set; }
+        public string PostalCode { get; set; }
     }
 }

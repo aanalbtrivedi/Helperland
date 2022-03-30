@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "MySettings";
+    ViewData["userName"] = @ViewBag.name;
     Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
 }
 
@@ -9,8 +10,8 @@
     <div class="row">
         <div class="col-md-4">
             <div class="text-center">
-			    <div class="justify-content-center align-self-center">
-                        <div id="tab1" class="active-tab tab-color cursor-change mysettingCust" onclick="Tab1Click()">My Details</div>
+                <div class="justify-content-center align-self-center">
+                    <div id="tab1" class="active-tab tab-color cursor-change mysettingCust" onclick="Tab1Click()">My Details</div>
                 </div>
             </div>
         </div>
@@ -31,9 +32,12 @@
     </div>
 
     <hr />
-    
+
     <div id="tabContent1" class="fordisplay">
         <form asp-action="MySettings">
+
+            <h4 id="showMessage" class="text-primary fornonedisplay">User Updated Successfully.</h4>
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="UserId" />
             <div class="row">
@@ -61,7 +65,7 @@
             </div>
 
 
-            
+
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
@@ -83,12 +87,12 @@
                 </div>
                 <div class="col-md-4"></div>
             </div>
-           
+
             <div class="form-group">
                 <label class="control-label">My Preferred Language</label>
                 <select class="form-control inline ng-pristine ng-valid ng-touched">
 
-                    <option value="1" id="ddlLanguage">
+                    <option value="1" id="ddlLanguage" selected>
                         English
                     </option>
 
@@ -270,14 +274,16 @@
     <div id="tabContent2" class="fornonedisplay">tabContent2</div>
     <div id="tabContent3" class="fornonedisplay">tabContent3</div>
 
-    <hr />
+    <h3>@ViewBag.Message</h3>
+    @*    <h3 id="successMsg"></h3>*@
 
+    <hr />
 </div>
 
 <script>
 
-
-    document.getElementById('datePicker').valueAsDate = new Date();
+    var Data = {};
+    //document.getElementById('datePicker').valueAsDate = new Date();
 
     function saveSettings() {
         var Settings = {};
@@ -286,7 +292,6 @@
         Settings.MobileNumber = $("#MobileNumber").val();
         Settings.Birthdate = $("#datePicker").val();
         Settings.Languageid = $('#ddlLanguage').find(":selected").val();
-        alert(Settings.Firstname);
 
         $.ajax({
                 url: '@Url.Action("MySettings")',
@@ -295,76 +300,146 @@
                 success: function (response) {
 
                     if (response) {
-                        alert(Settings.Firstname);
+                        $("#showMessage").show();
                     }
                 },
                 failure: function (response) {
                     alert("failure");
                 },
                 error: function (response) {
-                    alert("Something went Wrong postbtn!!");
+                    alert("Something went Wrong!!");
                 }
             })
-        }
+    }
 
+    function btndltAddress(x) {
 
-        function btnSaveAddress() {
-            var chngAddress = {};
-            var addr1 = $("#stNo").val();
-            var PostalCodeUser = $("#ptNo").val();
-            var ct = $('#ddlCity').find(":selected").text();
-            if ($("#hsNo").val() != null) {
-                var addr2 = $("#hsNo").val();
-                bookings.AddressLine2 = addr2;
-            }
-            chngAddress.Mobile = $("#phno").val();
-            chngAddress.AddressLine1 = addr1;
-            chngAddress.PostalCodeUser = PostalCodeUser;
-            chngAddress.City = ct;
-
-            $.ajax({
+        Data.chkfordelete = 1;
+        Data.AddressID = x;
+        alert(Data.AddressID);
+        $.ajax({
                 url: '@Url.Action("GetAddressCust")',
                 type: 'post',
-                data: chngAddress,
+                data: Data,
                 success: function (response) {
 
                     if (response) {
-
-                        alert("Address has saved ! To watch, refresh the page");
+                        location.reload();
                     }
                 },
                 failure: function (response) {
                     alert("failure");
                 },
                 error: function (response) {
-                    alert("Something went Wrong addresssavebtn!!");
+                    location.reload();
+                    $("#errormsg").html("Something went wrong");
                 }
             })
-        }
+    }
 
-        function btnAddress() {
-            var chngAddress = {};
-            var checkaddress;
-            checkaddress = $("input[name='address']:checked").val();
-            chngAddress.AddressID = checkaddress;
-            alert(chngAddress.AddressID);
+    function btneditAddress() {
+        $("#editModel").show();
+    }
 
-            $.ajax({
+    function updateAddress(x) {
+
+        Data.AddressId = x
+        Data.chkforUpdate = 1;
+        Data.AddressLine1 = $("#AddressLine1").val();
+        Data.AddressLine2 = $("#AddressLine2").val();
+        Data.PostalCodeUser = $("#PostalCode").val();
+        Data.Mobile = $("#Mobile").val();
+        Data.City = $('#ddlCity').find(":selected").text();
+
+        $.ajax({
                 url: '@Url.Action("GetAddressCust")',
                 type: 'post',
-                data: chngAddress,
+                data: Data,
                 success: function (response) {
 
                     if (response) {
-                        alert("Address has Saved !");
+                        $("#tab2").click();
                     }
                 },
                 failure: function (response) {
                     alert("failure");
                 },
                 error: function (response) {
-                    alert("Something went Wrong addressbtn!!");
+                    $("#tab2").click();
+                    $("#errormsg").html("Something went wrong");
                 }
             })
+    }
+
+    function btnClose() {
+        $("#tab2").click();
+        $("#edilModel").hide();
+    }
+
+    function btnchangePassword() {
+        var ChangePassword = {};
+        ChangePassword.oldPassword = $("#oldPassword").val();
+        ChangePassword.newPassword = $("#newPassword").val();
+        ChangePassword.ConfirmPassword = $("#ConfirmPassword").val();
+
+        $.ajax({
+                url: '@Url.Action("ChangePassword")',
+                type: 'post',
+                data: ChangePassword,
+                success: function (response) {
+
+                    if (response) {
+                        $("#tab3").click();
+                        $("#successMsg").html("Your Password is Changed.");
+
+                    }
+                },
+                failure: function (response) {
+                    alert("failure");
+                },
+                error: function (response) {
+                    $("#tab3").click();
+                    $("#errormsg").html("Something went wrong");
+                }
+            })
+    }
+
+    function btnSaveAddress() {
+        //var getadd = {};
+        Data.chkforAdd = 1;
+        addr1 = $("#stNo").val();
+        PostalCodeUser = $("#ptNo").val();
+        ct = $('#ddlCity').find(":selected").text();
+        if ($("#hsNo").val() != null) {
+            addr2 = $("#hsNo").val();
+            Data.AddressLine2 = addr2;
         }
+        Data.Mobile = $("#phno").val();
+        Data.AddressLine1 = addr1;
+        Data.PostalCodeUser = PostalCodeUser;
+        Data.City = ct;
+
+        $.ajax({
+                url: '@Url.Action("GetAddressCust")',
+                type: 'post',
+                data: Data,
+                success: function (response) {
+
+                    if (response) {
+                        $("#tab3").click();
+                    }
+                },
+                failure: function (response) {
+                    alert("failure");
+                },
+                error: function (response) {
+                    $("#tab2").click();
+                }
+            })
+    }
+
+    function btnCancelAddress() {
+        $("#test").removeClass("fordisplay").addClass("fornonedisplay");
+        $("#addnewadd").addClass("fornonedisplay").addClass("addnewaddtab");
+    }
 </script>

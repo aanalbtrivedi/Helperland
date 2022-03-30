@@ -1,0 +1,93 @@
+﻿@model IEnumerable<HelperlandWebsite.ViewModels.BlockUserViewModel>
+
+@{
+    ViewData["Title"] = "BlockUser";
+    Layout = "~/Views/Shared/_LayoutSP.cshtml";
+}
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-9">
+            <div>
+                
+                <div class="favourite-pro divblock">
+                    <img src="~/img/cap.png" class="cap-img" />
+                    @item.FirstName
+                    @item.LastName
+
+
+                <div class="divblock">
+                    <div class="fordisplay" id="idblock">
+                        <button class="btn btn-danger" onclick="blockUser(@item.UserId)">
+                            Block
+                        </button>
+                    </div>
+                    <div class="fornonedisplay" id="idunblock">
+                        <button class="btn btn-primary" onclick="unblockUser(@item.UserId)">
+                            Unblock
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
+<script>
+    var datablock = {};
+    function blockUser(x) {
+        var id = x;
+        alert(id);
+        $('#idblock').removeClass("fordisplay").addClass("fornonedisplay");
+        $('#idunblock').removeClass("fornonedisplay").addClass("fordisplay");
+        datablock.TargetUserId = id;
+        datablock.IsBlocked = true;
+        $.ajax({
+                url: '@Url.Action("BlockUser")',
+                type: 'post',
+                data: datablock,
+                success: function (response) {
+
+                    if (response) {
+                        location.reload();
+                    }
+                },
+                failure: function (response) {
+                    alert("failure");
+                },
+                error: function (response) {
+                    $("#errormsg").html("Something went wrong");
+                }
+            })
+    }
+
+    function unblockUser(x) {
+        var id = x;
+        alert(id);
+        $('#idunblock').removeClass("fordisplay").addClass("fornonedisplay");
+        $('#idblock').removeClass("fornonedisplay").addClass("fordisplay");
+        datablock.TargetUserId = id;
+        datablock.IsBlocked = false;
+        $.ajax({
+                url: '@Url.Action("BlockUser")',
+                type: 'post',
+                data: datablock,
+                success: function (response) {
+
+                    if (response) {
+                        location.reload();
+                    }
+                },
+                failure: function (response) {
+                    alert("failure");
+                },
+                error: function (response) {
+                    location.reload();
+                    $("#errormsg").html("Something went wrong");
+                }
+            })
+    }
+</script>

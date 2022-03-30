@@ -134,8 +134,8 @@ namespace HelperlandWebsite.Controllers
             {
                 if (IsValidUser(loginViewModel))
                 {
-                    ViewBag.setId = 6;
-                    //HttpContext.Session.SetInt32("Id",loginViewModel.userId);
+                    //ViewBag.setId = 6;
+                    HttpContext.Session.SetInt32("Id",loginViewModel.userId);
                     HttpContext.Session.SetString("Email", loginViewModel.Email);
                     return RedirectToAction("CustomerDashboard", "Customer");
 

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer>Service history</title>
+    <!-- bootstrap Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap3/bootstrapcss/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap3/bootstrapcss/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <link href="~/css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-inverse Navbarcolor">
+            <div class="container-fluid Navbarcolor">
+                <div class="navbar-header Navbarcolor">
+                    <a class="navbar-brand Navbarcolor" asp-controller="Home" asp-action="Index">
+                        <img src="~/img/white-logo.png" class="nav-other-logo img-responsive" alt="logo">
+                    </a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Prices & Services</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" class="scroll-link"><img src="~/img/admin-user.png" class="nav-noti-icon img-responsive"></a></li>
+                    <li><a href="#" class="scroll-link"><img src="~/img/icon-notification.png" class="nav-noti-icon img-responsive"></a></li>
+                    <li class="dropdown Navbarcolor">
+                        <a class="dropdown-toggle  Navbarcolor" data-toggle="dropdown" href="#">
+                            <img src="~/img/go-up.png" class="nav-noti-icon img-responsive" />
+                            <ul class="dropdown-menu Navbarcolor">
+                                <li><a asp-controller="ServiceProvider" asp-action="NewServiceRequests">New Service Requests</a></li>
+                                <li><a asp-controller="ServiceProvider" asp-action="Mysettings">My Settings</a></li>
+                                <li><a asp-controller="ServiceProvider" asp-action="Logout">Logout</a></li>
+                            </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <!-- Header End -->
+    <div>
+
+        <!-- Welcome Section -->
+        <section class="welcomediv">
+            <h1 class="wctext">Welcome, <span class="wc-Sandip">Gaurang!</span></h1>
+            @*<div class="dropdown">
+                    <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                        <img src="~/img/go-up.png" class="nav-noti-icon img-responsive">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" style="color:black !important">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">HTML</a></li>
+                    </ul>
+                </div>*@
+        </section>
+        <!-- Welcome Section End -->
+        <!-- Middle Section invisible -->
+        <section class="container invisibletable">
+            <div class="row">
+                <div class="col-md-2 left-sec">
+                    <table class="table">
+                        <tr><td><a asp-controller="ServiceProvider" asp-action="NewServiceRequests" class="list-group-item">NewServiceRequests</a></td></tr>
+                        <tr><td><a asp-controller="ServiceProvider" asp-action="UpcomingServices" class="list-group-item">UpcomingServices</a></td></tr>
+                        <tr><td><a asp-controller="ServiceProvider" asp-action="ServiceHistory" class="list-group-item">Service History</a></td></tr>
+                        <tr><td><a asp-controller="ServiceProvider" asp-action="BlockUser" class="list-group-item">Block User</a></td></tr>
+                        <tr><td><a asp-controller="ServiceProvider" asp-action="MyRattings" class="list-group-item">My Rattings</a></td></tr>
+                        <tr><td><a href="#" class="list-group-item">Service Schedule</a></td></tr>
+                        <tr><td><a href="#" class="list-group-item">Invoices</a></td></tr>
+                        <tr><td><a href="#" class="list-group-item">Notifications</a></td></tr>
+                    </table>
+                </div>
+
+
+                @RenderBody()
+
+            </div>
+        </section>
+        <!-- Middle Section invisible End -->
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <img src="~/img/white-logo.png" class="footer-logo img-responsive" />
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <div class="text-center">
+                        <div class="justify-content-center align-self-center ">
+                            <a href="#" class="footermenu">HOME</a>
+                            @Html.ActionLink("HOME", "Index", "Home")
+                            <a href="#" class="footermenu">ABOUT</a>
+                            <a href="#" class="footermenu">TESTIMATIONS</a>
+                            <a href="#" class="footermenu">FAQS</a>
+                            <a href="#" class="footermenu">INSURANCE POLISY</a>
+                            <a href="#" class="footermenu">IMPRESSUM</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <a href="#"><img src="~/img/facebook.png" class="socialicons"></a>
+                    <a href="#"><img src="~/img/instagram.png" class="socialicons"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="line"></div>
+            <div class="text-center">
+                <div class=" justify-content-center align-self-center ">
+                    <span class="terms">©2018 Helperland. All rights reserved.Terms and Conditions  |  Privacy Policy</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HelperlandWebsite.ViewModels.SPServiceHistoryViewModel>
+
+@{
+    ViewData["Title"] = "ServiceHistory";
+    Layout = "~/Views/Shared/_LayoutSP.cshtml";
+}
+
+<h3>ServiceHistory</h3>
+
+<div class="col-md-9">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceRequestId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartingDate)
+                </th>
+                <th>
+                    Customer Details
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ServiceRequestId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartingDate)
+                        @Html.DisplayFor(modelItem => item.ServiceHours)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddressLine1)
+                        @Html.DisplayFor(modelItem => item.AddressLine2)
+                        @Html.DisplayFor(modelItem => item.City)
+                        @Html.DisplayFor(modelItem => item.PostalCode)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

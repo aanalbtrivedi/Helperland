@@ -2,176 +2,194 @@
 
 @{
     ViewData["Title"] = "Customer Dashboard";
+    ViewData["userName"] = @ViewBag.name;
     Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
 }
 
+<div class="col-md-9" id="bgclrset">
 
+    <table class="table table-visual">
+        <p class="hist">Dashboard</p>
+        <a asp-controller="BookNow" asp-action="BookNow" class="cus-addreq"><Span class="cus-export-write">Add Service Request</Span></a>
+        <thead>
+            <tr class="table-heading">
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceRequestId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartingDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceProviderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Payment)
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ServiceRequestId)
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <img src="~/img/calendar2.png" class="img-responsive calendar2">
+                            <span class="wcdate">
+                                @Convert.ToDateTime(item.StartingDate).ToString("dd/MM/yyyy")
+                                @Convert.ToDateTime(item.StartingDate).ToString("hh/mm")
+                            </span>
+                        </span>
+                        <span class="servicetime">@Html.DisplayFor(modelItem => item.ServiceHours) Hours</span>
+                    </td>
+                    <td class="common-text-effect">
+                        <span class="cus-block">
+                            @if (item.ServiceProviderId != null)
+                            {
+                                <img src="~/img/cap.png" class="img-responsive cap-img">
+                                @ViewBag.SPfname
+                                @ViewBag.SPlname
+                                @*<span class="customer-details-admin">@Html.DisplayFor(modelItem => item.ServiceProviderId)</span>*@<br />
+                                <img src="~/img/stars.png" class="img-responsive stars">
+                                <span class="customer-details-admin">4</span><br />
 
-        <div class="col-md-9" id="bgclrset">
-           
-        <table class="table table-visual">
-            <p class="hist">Dashboard</p>
-            <a asp-controller="BookService" asp-action="Book_now" class="cus-addreq"><Span class="cus-export-write">Add Service Request</Span></a>
-            <thead>
-                <tr class="table-heading">
-                    <th>
-                        @Html.DisplayNameFor(model => model.ServiceRequestId)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.StartingDate)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ServiceProviderId)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Payment)
-                    </th>
-                    <th>
-                        Action
-                    </th>
+                            }
+                        </span>
+                    </td>
+                    <td>
+                        <span class="servicedate">
+                            <span class="customer-payment">€@Html.DisplayFor(modelItem => item.Payment)</span>
+                        </span>
+                    </td>
+                    <td>
+                        <button asp-route-id="@item.ServiceRequestId" onclick="btnReschedule(@item.ServiceRequestId)">Reschedule</button>
+                        <button asp-route-id="@item.ServiceRequestId" onclick="btnCancel(@item.ServiceRequestId)">Cancel</button>
+
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ServiceRequestId)
-                        </td>
-                        <td>
-                            <span class="servicedate">
-                                <img src="~/img/calendar2.png" class="img-responsive calendar2">
-                                <span class="wcdate">
-                                    @Convert.ToDateTime(item.StartingDate).ToString("dd/MM/yyyy")
-                                    @Convert.ToDateTime(item.StartingDate).ToString("hh/mm")
-                                </span>
-                            </span>
-                            <span class="servicetime">@Html.DisplayFor(modelItem => item.ServiceHours) Hours</span>
-                        </td>
-                        <td class="common-text-effect">
-                            <span class="cus-block">
-                                @if (item.ServiceProviderId != null)
-                                {
-                                    <img src="~/img/cap.png" class="img-responsive cap-img">
-                                    <span class="customer-details-admin">@Html.DisplayFor(modelItem => item.ServiceProviderId)</span>
-                                    <img src="~/img/stars.png" class="img-responsive stars">
-                                    <span class="customer-details-admin">4</span>
-                                }
-                            </span>
-                        </td>
-                        <td>
-                            <span class="servicedate">
-                                <span class="customer-payment">€@Html.DisplayFor(modelItem => item.Payment)</span>
-                            </span>
-                        </td>
-                        <td>
-                            <button asp-route-id="@item.ServiceRequestId" onclick="btnReschedule()">Reschedule</button>
-                            <a asp-action="Delete" asp-route-id="@item.ServiceRequestId">Cancel</a>
 
-                        </td>
-                    </tr>
-
-                    <div id="reschedule" class="reschedule">
-                        <div class="modal-dialog vertical-align-center modal-sm">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <h4 class="modal-title">Reschedule Service Request</h4>
-                                    <a class="modal-closer" data-dismiss="modal" asp-controller="Customer" asp-action="CustomerDashboard">
-                                        Close
-                                    </a>
-                                    <div class="form-group calculator-date-time in-modal">
-                                        <label class="control-label">Select New Date &amp; Time</label>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="input-wrapper">
-                                                    <input type="date"
-                                                           id="datePicker"
-                                                           name="Tdate"
-                                                           class="form-control clean-date"
-                                                           value="<%=DateTime.Now.ToString(" dd-mm-yyyy")%>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <select class="form-control ng-untouched ng-pristine ng-valid" id="drpTime">
-                                                    <option value="8">8:00</option>
-                                                    <option value="8.5">8:30</option>
-                                                    <option value="9">9:00</option>
-                                                    <option value="9.5">9:30</option>
-                                                    <option value="10">10:00</option>
-                                                    <option value="10.5">10:30</option>
-                                                    <option value="11">11:00</option>
-                                                    <option value="11.5">11:30</option>
-                                                    <option value="12">12:00</option>
-                                                    <option value="12.5">12:30</option>
-                                                    <option value="13">13:00</option>
-                                                    <option value="13.5">13:30</option>
-                                                    <option value="14">14:00</option>
-                                                    <option value="14.5">14:30</option>
-                                                    <option value="15">15:00</option>
-                                                    <option value="15.5">15:30</option>
-                                                    <option value="16">16:00</option>
-                                                    <option value="16.5">16:30</option>
-                                                    <option value="17">17:00</option>
-                                                    <option value="17.5">17:30</option>
-                                                    <option value="18">18:00</option>
-                                                    <option value="18.5">18:30</option>
-                                                    <option value="19">19:00</option>
-                                                    <option value="19.5">19:30</option>
-                                                    <option value="20">20:00</option>
-                                                </select>
+                <div id="reschedule" class="reschedule">
+                    <div class="modal-dialog vertical-align-center modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h4 class="modal-title">Reschedule Service Request</h4>
+                                <a class="modal-closer" data-dismiss="modal" asp-controller="Customer" asp-action="CustomerDashboard">
+                                    Close
+                                </a>
+                                <div class="form-group calculator-date-time in-modal">
+                                    <label class="control-label">Select New Date &amp; Time</label>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="input-wrapper">
+                                                <input type="date"
+                                                       id="datePicker"
+                                                       name="Tdate"
+                                                       class="form-control clean-date"
+                                                       value="<%=DateTime.Now.ToString(" dd-mm-yyyy")%>
                                             </div>
                                         </div>
+                                        <div class="col-sm-6">
+                                            <select class="form-control ng-untouched ng-pristine ng-valid" id="drpTime">
+                                                <option value="8">8:00</option>
+                                                <option value="8.5">8:30</option>
+                                                <option value="9">9:00</option>
+                                                <option value="9.5">9:30</option>
+                                                <option value="10">10:00</option>
+                                                <option value="10.5">10:30</option>
+                                                <option value="11">11:00</option>
+                                                <option value="11.5">11:30</option>
+                                                <option value="12">12:00</option>
+                                                <option value="12.5">12:30</option>
+                                                <option value="13">13:00</option>
+                                                <option value="13.5">13:30</option>
+                                                <option value="14">14:00</option>
+                                                <option value="14.5">14:30</option>
+                                                <option value="15">15:00</option>
+                                                <option value="15.5">15:30</option>
+                                                <option value="16">16:00</option>
+                                                <option value="16.5">16:30</option>
+                                                <option value="17">17:00</option>
+                                                <option value="17.5">17:30</option>
+                                                <option value="18">18:00</option>
+                                                <option value="18.5">18:30</option>
+                                                <option value="19">19:00</option>
+                                                <option value="19.5">19:30</option>
+                                                <option value="20">20:00</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <button type="button" class="btn btn-primary" name="update" onclick="updateSchedule(@item.ServiceRequestId)" value="@item.ServiceRequestId">
-                                        Update
-                                    </button>
                                 </div>
+                                <button type="button" class="btn btn-primary" name="update" onclick="updateSchedule()">
+                                    Update
+                                </button>
+                                <p class="text-info fornonedisplay" id="updationmsg">Schedule is updated.</p>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+            
+                <div id="Cancel" class="reschedule">
+                    <div class="modal-dialog vertical-align-center modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h4 class="modal-title">Reschedule Service Request</h4>
+                                <a class="modal-closer" data-dismiss="modal" asp-controller="Customer" asp-action="CustomerDashboard">
+                                    Close
+                                </a>
+                                <label class="control-label">Why you want to cancel the service request?</label>
+                                <div class="form-group calculator-date-time in-modal">
+                                    <textarea class="btncustDash" rows="4"></textarea>
+                                </div>
+                                <button type="button" class="btn btn-primary btncustDash" name="update" onclick="cancelReq()">
+                                    Cancel
+                                </button>
+                                <p class="text-info fornonedisplay" id="updationmsg">Schedule is updated.</p>
                             </div>
                         </div>
                     </div>
+                </div>
                 }
-            </tbody>
-        </table>         
-        </div>
-    
+        </tbody>
+    </table>
+</div>
 
-        <script>
+
+<script>
 
 
     document.getElementById('datePicker').valueAsDate = new Date();
+    ``
+    //var userId = $("#userId").text();
 
-    var userId = $("#userId").text();
-    function btnReschedule() {
-       
+    var id;
+    var dataSchedule = {};
+    function btnReschedule(x) {
+        id = x;
+        alert(x);
+
         $("#reschedule").show();
         $("body").addClass("bgclrset");
         $("table").addClass("bgclrset");
     }
-
-            
-
-            function updateSchedule(x) {
-                var valx = x;
-                alert(x);
-            var dataSchedule = {};
-            var time = $('#drpTime').find(":selected").text();
-            var date = $("#datePicker").val();
-            var dateandtime = date.concat(' ' + time);
-            alert(dateandtime);
-
-                dataSchedule.StartingDate = dateandtime;
-                //alert(dataSchedule.StartingDate + 'StartingDate');
-                dataSchedule.ServiceRequestId = valx;
-                dataSchedule.UserId = 6;
-                
-                //alert(dataSchedule.ServiceRequestId + 'ServiceRequestId');
-
-       var slctId;
-
-       //slctId = $("input[name='update']:checked").val();
-       //alert(slctId + 'slctd');
-
-
+    function btnCancel(x) {
+        id = x;
+        alert(x);
+        $("#Cancel").show();
+        $("body").addClass("bgclrset");
+        $("table").addClass("bgclrset");
+    }
+    function updateSchedule() {
+        
+        var time = $('#drpTime').find(":selected").text();
+        var date = $("#datePicker").val();
+        var dateandtime = date.concat(' ' + time);
+        dataSchedule.ServiceRequestId = id;
+        dataSchedule.StartingDate = dateandtime;
 
         $.ajax({
                 url: '@Url.Action("CustomerDashboard")',
@@ -180,20 +198,44 @@
                 success: function (response) {
 
                     if (response) {
-                        alert(date);
+                        location.reload();
                     }
                 },
                 failure: function (response) {
                     alert("failure");
                 },
                 error: function (response) {
-                    alert("Something went Wrong postbtn!!");
-                }
+                    location.reload();
+                    $("#errormsg").html("Error");
+                    }
             })
     }
-    //var date = '28/05/2011 12:05:00';
-    //var hrs = date.split(' ')[1].split(':')[0];
-        </script>
+
+    function cancelReq() {
+        
+        dataSchedule.ServiceRequestId = id;
+        dataSchedule.dltSerReq = 1;
+
+        $.ajax({
+                url: '@Url.Action("CustomerDashboard")',
+                type: 'post',
+                data: dataSchedule,
+                success: function (response) {
+
+                    if (response) {
+                        location.reload();
+                    }
+                },
+                failure: function (response) {
+                    alert("failure");
+                },
+                error: function (response) {
+                    location.reload();
+                    $("#errormsg").html("Error");
+                    }
+            })
+    }
+</script>
 
 
 

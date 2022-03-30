@@ -15,5 +15,6 @@ namespace HelperlandWebsite.ViewModels
         public decimal Payment { get; set; }
         public int? ServiceProviderId { get; set; }
         public int UserId { get; set; }
+        public int dltSerReq { get; set; }
     }
 }

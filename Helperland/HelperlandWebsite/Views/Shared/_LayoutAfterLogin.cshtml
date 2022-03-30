@@ -30,23 +30,36 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="topnav" id="myTopnav">
-            <img src="~/img/white-logo.png" class="nav-other-logo img-responsive" alt="logo">
-            <a href="#" class="scroll-link"><img src="~/img/go-up.png" class=""></a>
-            <a href="#" class="scroll-link"><img src="~/img/admin-user.png" class="nav-noti-icon img-responsive"></a>
-            <a href="#" class="scroll-link"><img src="~/img/icon-notification.png" class="nav-noti-icon img-responsive"></a>
-            <a href="#">Contact</a>
-            <a href="#">Blog</a>
+        <nav class="navbar navbar-inverse Navbarcolor">
+            <div class="container-fluid Navbarcolor">
+                <div class="navbar-header Navbarcolor">
+                    <a class="navbar-brand Navbarcolor" asp-controller="Home" asp-action="Index">
+                        <img src="~/img/white-logo.png" class="nav-other-logo img-responsive" alt="logo">
+                    </a>
+                </div>
 
-            <a href="#">Warranty</a>
-            <a href="#" class="">Prices & Services</a>
-            <a href="#" class="Rounded-Rectangle-other">Book now</a>
-
-            <a href="javascript:void(0);" class="icon" onclick="myFunctionnav()">
-                <i class="fa fa-bars"></i>
-            </a>
-
-        </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="Navbarcolor">
+                        <a href="#" class="Rounded-Rectangle-other">Book now</a>
+                    </li>
+                    <li><a href="#">Prices & Services</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" class="scroll-link"><img src="~/img/admin-user.png" class="nav-noti-icon img-responsive"></a></li>
+                    <li><a href="#" class="scroll-link"><img src="~/img/icon-notification.png" class="nav-noti-icon img-responsive"></a></li>
+                    <li class="dropdown Navbarcolor">
+                        <a class="dropdown-toggle  Navbarcolor" data-toggle="dropdown" href="#">
+                            <img src="~/img/go-up.png" class="nav-noti-icon img-responsive" />
+                            <ul class="dropdown-menu Navbarcolor">
+                                <li><a asp-controller="Customer" asp-action="CustomerDashboard">Dashboard</a></li>
+                                <li><a asp-controller="Customer" asp-action="Mysettings">My Settings</a></li>
+                                <li><a asp-controller="Customer" asp-action="Logout">Logout</a></li>
+                            </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
     </header>
     <!-- Header End -->

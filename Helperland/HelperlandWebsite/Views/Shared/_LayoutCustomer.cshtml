@@ -23,6 +23,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <link href="~/css/site.css" rel="stylesheet" />
 
@@ -30,24 +33,36 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="topnav" id="myTopnav">
+        <nav class="navbar navbar-inverse Navbarcolor">
+            <div class="container-fluid Navbarcolor">
+                <div class="navbar-header Navbarcolor">
+                    <a class="navbar-brand Navbarcolor" asp-controller="Home" asp-action="Index">
+                        <img src="~/img/white-logo.png" class="nav-other-logo img-responsive" alt="logo">
+                    </a>
+                </div>
 
-            <img src="~/img/white-logo.png" class="nav-other-logo img-responsive" alt="logo">
-            <a href="#" class="scroll-link"><img src="~/img/go-up.png" class=""></a>
-            <a href="#" class="scroll-link"><img src="~/img/admin-user.png" class="nav-noti-icon img-responsive"></a>
-            <a href="#" class="scroll-link"><img src="~/img/icon-notification.png" class="nav-noti-icon img-responsive"></a>
-            <a href="#">Contact</a>
-            <a href="#">Blog</a>
-
-            <a href="#">Warranty</a>
-            <a href="#" class="">Prices & Services</a>
-            <a href="#" class="Rounded-Rectangle-other">Book now</a>
-
-            <a href="javascript:void(0);" class="icon" onclick="myFunctionnav()">
-                <i class="fa fa-bars"></i>
-            </a>
-
-        </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="Navbarcolor">
+                        <a href="#" class="Rounded-Rectangle-other">Book now</a>
+                    </li>
+                    <li><a href="#">Prices & Services</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" class="scroll-link"><img src="~/img/admin-user.png" class="nav-noti-icon img-responsive"></a></li>
+                    <li><a href="#" class="scroll-link"><img src="~/img/icon-notification.png" class="nav-noti-icon img-responsive"></a></li>
+                    <li class="dropdown Navbarcolor">
+                        <a class="dropdown-toggle  Navbarcolor" data-toggle="dropdown" href="#">
+                            <img src="~/img/go-up.png" class="nav-noti-icon img-responsive" />
+                            <ul class="dropdown-menu Navbarcolor">
+                                <li><a asp-controller="Customer" asp-action="CustomerDashboard">Dashboard</a></li>
+                                <li><a asp-controller="Customer" asp-action="Mysettings">My Settings</a></li>
+                                <li><a asp-controller="Customer" asp-action="Logout">Logout</a></li>
+                            </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
     </header>
     <!-- Header End -->
@@ -55,17 +70,8 @@
 
         <!-- Welcome Section -->
         <section class="welcomediv">
-            <h1 class="wctext">Welcome, <span class="wc-Sandip">Gaurang!</span></h1>
-            @*<div class="dropdown">
-                <button class="dropdown-toggle" type="button" data-toggle="dropdown">
-                    <img src="~/img/go-up.png" class="nav-noti-icon img-responsive">
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" style="color:black !important">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">HTML</a></li>
-                </ul>
-            </div>*@
+            <h1 class="wctext">Welcome, <span class="wc-Sandip">@ViewBag.userName</span></h1>
+            
         </section>
         <!-- Welcome Section End -->
         <!-- Middle Section invisible -->
@@ -90,7 +96,41 @@
         </section>
         <!-- Middle Section invisible End -->
     </div>
-            <script src="~/js/site.js" asp-append-version="true"></script>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <img src="~/img/white-logo.png" class="footer-logo img-responsive" />
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <div class="text-center">
+                        <div class="justify-content-center align-self-center ">
+                            <a href="#" class="footermenu">HOME</a>
+                            @Html.ActionLink("HOME", "Index", "Home")
+                            <a href="#" class="footermenu">ABOUT</a>
+                            <a href="#" class="footermenu">TESTIMATIONS</a>
+                            <a href="#" class="footermenu">FAQS</a>
+                            <a href="#" class="footermenu">INSURANCE POLISY</a>
+                            <a href="#" class="footermenu">IMPRESSUM</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <a href="#"><img src="~/img/facebook.png" class="socialicons"></a>
+                    <a href="#"><img src="~/img/instagram.png" class="socialicons"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="line"></div>
+            <div class="text-center">
+                <div class=" justify-content-center align-self-center ">
+                    <span class="terms">©2018 Helperland. All rights reserved.Terms and Conditions  |  Privacy Policy</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 
 </html>

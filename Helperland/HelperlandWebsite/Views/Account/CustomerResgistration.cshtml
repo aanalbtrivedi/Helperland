@@ -14,24 +14,9 @@
         <div class="container">
             <form asp-action="CustomerRegistration" class="m-auto px-3">
 
-                @if (ViewBag.HasError == true)
-                {
-                    <div class="row">
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            @ViewBag.ErrorMessage
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    </div>
-                }
-                @if (ViewBag.Success == true)
-                {
-                    <div class="row">
-                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                            @ViewBag.SuccessMessage
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    </div>
-                }
+               @if (ViewBag.Message != null) { 
+                   <p id="showMessage"></p> @ViewBag.Message
+               }
 
                 <div class="row">
                     <div class="col-sm-6">
@@ -113,3 +98,6 @@
     </section>
 
 </main>
+<script>
+
+</script>

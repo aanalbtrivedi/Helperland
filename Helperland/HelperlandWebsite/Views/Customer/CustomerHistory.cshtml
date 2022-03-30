@@ -2,19 +2,19 @@
 
 @{
     ViewData["Title"] = "CustomerHistory";
+    ViewData["userName"] = @ViewBag.name;
     Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
 }
 
-<h1>CustomerHistory</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h3>CustomerHistory</h3>
 
 <div class="col-md-9" id="bgclrset">
     <table class="table">
         <thead>
             <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceRequestId)
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.StartingDate)
                 </th>
@@ -36,29 +36,181 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StartingDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ServiceHours)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Payment)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ServiceProviderId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ServiceRequestId">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ServiceRequestId">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ServiceRequestId">Delete</a>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceRequestId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartingDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceHours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderId)
+                </td>
+                <td>
+                    @if (item.Status == 3)
+                    {
+                        <button class="btn btn-primary btncustDash" disabled>Completed</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-danger btncustDash" disabled>Cancelled</button>
+                    }
+                </td>
+                <td>
+                    @if (item.Status == 3)
+                    {
+                        <button class="btn btn-primary" onclick="btnRateSP(@item.ServiceRequestId)">Rate SP</button>
+                    }
+                    else
+                    {
+                    <button class="btn btn-primary" disabled>Rate SP</button>
+                    }
+                </td>
+            </tr>
+            
+            <div id="SPRste" class="reschedule">
+                <div class="modal-dialog vertical-align-center modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body formclass">
+                            <p>
+                                <strong>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </strong>
+                                <a class="modal-closer" data-dismiss="modal" asp-controller="Customer" asp-action="CustomerHistory">
+                                    Close
+                                </a>
+                            </p>
+                            <p class="rateSP"><span class="stars"></span></p>
+                            
+                            <h2 class="modal-title">Rate your service provider</h2>
+                            <hr />
+                            <label>
+                                On time arrival
+                                <input type="text" class="form-control rateSP" id="inptstar1" />
+                                <p class="rateSP"><span class="stars1"></span></p>
+                            </label>
+                            <label>
+                                Friendly
+                                <input type="text" class="form-control rateSP" id="inptstar2" />
+                                <p class="rateSP"><span class="stars2"></span></p>
+                            </label>
+                            <label>
+                                Quality of Service
+                                <input type="text" class="form-control rateSP" id="inptstar3" />
+                                <p class="rateSP"><span class="stars3"></span></p>
+                            </label>
+                            <label>
+                                Feedback on service provider
+                                <textarea class="btncustDash" id="cmnt"></textarea>
+                            </label>
+                            <button type="button" class="btn btn-primary" name="stars" onclick="starsnew()">
+                                stars
+                            </button>
+                            <button onclick="saveRatings()" class="btn btn-primary">Done</button>
+                            <p class="text-info fornonedisplay" id="updationmsg">Schedule is updated.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             }
         </tbody>
     </table>
 </div>
+
+<script>
+
+    var starWidth = 40;
+    var ratingData = {};
+    var ServiceRequestId;
+    var val;
+    var val1;
+    var val2;
+    var val3;
+
+    $.fn.stars = function () {
+        return $(this).each(function () {
+            var star1 = $("#inptstar1").val();
+            var star2 = $("#inptstar2").val();
+            var star3 = $("#inptstar3").val();
+            //var val;
+            val = (parseFloat(star1) + parseFloat(star2) + parseFloat(star3)) / 3;
+            var size = Math.max(0, (Math.min(5, val))) * starWidth;
+            var $span = $('<span />').width(size);
+            $(this).html($span);
+        });
+    }
+    $.fn.stars1 = function () {
+        return $(this).each(function () {
+            var val1 = $("#inptstar1").val();
+            var size = Math.max(0, (Math.min(5, val1))) * starWidth;
+            var $span = $('<span />').width(size);
+            $(this).html($span);
+        });
+    }
+    $.fn.stars2 = function () {
+        return $(this).each(function () {
+            var val2 = $("#inptstar2").val();
+            var size = Math.max(0, (Math.min(5, val2))) * starWidth;
+            var $span = $('<span />').width(size);
+            $(this).html($span);
+        });
+    }
+    $.fn.stars3 = function () {
+        return $(this).each(function () {
+            var val3 = $("#inptstar3").val();
+            var size = Math.max(0, (Math.min(5, val3))) * starWidth;
+            var $span = $('<span />').width(size);
+            $(this).html($span);
+        });
+    }
+    function btnRateSP(x) {
+        ServiceRequestId = x;
+        $("#SPRste").show();
+        $("body").addClass("bgclrset");
+        $("table").addClass("bgclrset");
+    }
+
+    function starsnew() {
+        $('span.stars').stars();
+        $('span.stars1').stars1();
+        $('span.stars2').stars2();
+        $('span.stars3').stars3(); 
+    }
+    function saveRatings() {
+        ratingData.OnTimeArrival = $("#inptstar1").val();
+        ratingData.Friendly = $("#inptstar2").val();
+        ratingData.QualityOfService = $("#inptstar3").val();
+        ratingData.Ratings = val;
+        ratingData.Comments = $("#cmnt").text();
+        ratingData.ServiceRequestId = ServiceRequestId;
+            //alert(ratingData.ServiceRequestId);
+
+            $.ajax({
+                url: '@Url.Action("CustomerHistory")',
+                type: 'post',
+                data: ratingData,
+                success: function (response) {
+
+                    if (response) {
+                        location.reload();
+                    }
+                },
+                failure: function (response) {
+                    alert("failure");
+                },
+                error: function (response) {
+                    location.reload();
+                    $("#errormsg").html("Something went wrong")
+                }
+            })
+    }
+
+</script>

@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json.Serialization;
 using HelperlandWebsite.Repository;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HelperlandWebsite
 {
@@ -35,6 +36,8 @@ namespace HelperlandWebsite
               {
                   options.SerializerSettings.ContractResolver = new DefaultContractResolver();
               });
+            services.AddDistributedMemoryCache();
+
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);//We set Time here 
@@ -42,8 +45,8 @@ namespace HelperlandWebsite
                 options.Cookie.IsEssential = true;
             });
             services.AddMemoryCache();
-            services.AddSession();
 
+            
 
         }
 
@@ -70,7 +73,7 @@ namespace HelperlandWebsite
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=BookNow}/{action=BookNow}/{id?}");
             });
         }
     }

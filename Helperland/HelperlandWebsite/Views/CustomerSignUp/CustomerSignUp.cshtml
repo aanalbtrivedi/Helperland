@@ -1,0 +1,95 @@
+﻿@model HelperlandWebsite.ViewModels.Cust_SignupViewModel
+
+@{
+    ViewData["Title"] = "CustomerSignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="card-login">
+    <h1 class="title">Create an account</h1>
+    <div class="container">
+        <form asp-action="CustomerSignUp" class="m-auto px-3">
+
+            @if (ViewBag.Message != null)
+            {
+                <h4 class="text-secondary">@ViewBag.Message</h4>
+            }
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input asp-for="FirstName" type="text" class="form-control fogotpass" placeholder="First name" required />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input asp-for="LastName" type="text" class="form-control fogotpass" placeholder="Last name" required />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input asp-for="Email" type="email" class="form-control fogotpass" placeholder="Email address" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="input-group fogotpass">
+                            <span class="input-group-text" id="basic-addon1">+49</span>
+                            <input asp-for="MobileNumber" type="number" placeholder="Mobile Number" class="form-control" aria-label="Mobile Number" aria-describedby="basic-addon1" required />
+                        </div>
+                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input asp-for="Password" type="password" class="form-control fogotpass" placeholder="Password" required />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input asp-for="ConfirmPassword" type="password" class="form-control fogotpass" placeholder="Confirm Password" required />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-check fogotpass">
+                    <input class="form-check-input fogotpass" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Yes, I would like to subscribe to the newsletter of Helperland GmbH with vouchers, trends, promotions and individualized offers. I can unsubscribe from the newsletter at any time in the newsletter and in the customer account itself.
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-check">
+                    <input class="form-check-input fogotpass" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        I agree with the <a href="#" class="check-link">terms and conditions</a> of Helperland GmbH.
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-check">
+                    <input class="form-check-input fogotpass" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        I have read the <a href="#" class="check-link">privacy policy</a>.
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" class="btn btn-primary m-auto fogotpass" value="Register" />
+            </div>
+            <div class="row text-center">
+                <p>Already register? <a class="check-link" asp-controller="Login" asp-action="Login">Login now</a></p>
+            </div>
+        </form>
+    </div>
+</section>

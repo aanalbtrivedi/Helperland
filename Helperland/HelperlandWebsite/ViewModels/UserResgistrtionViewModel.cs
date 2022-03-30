@@ -9,7 +9,11 @@ namespace HelperlandWebsite.ViewModels
 {
     public class UserResgistrtionViewModel
     {
-        
+        [Key]
+        public int UserId { get; set; }
+
+        public int UsertypeId { get; set; }
+
         [Required(ErrorMessage = "Please enter a First Name", AllowEmptyStrings = false)]
         [DataType(DataType.Text)]
         public string FirstName { get; set; }

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<HelperlandWebsite.ViewModels.ListAddressViewModel>
+
+@{
+    ViewData["Title"] = "GetAddress";
+    Layout = null;
+}
+<label class="lblPostalCode" for="address">Enter your contact details, so we can serve you in better way!</label>
+
+@foreach (var data in Model)
+{
+    <span class="text-danger"></span>
+    <div class="address-div">
+        <div class="row">
+            <div class="col-md-1">
+                <input type="radio" name="address" value="@data.AddressId"  class="address-radio" />
+            </div>
+            <div class="col-md-11">
+                <label class="address-details">
+                    Address:@data.AddressId ,@data.AddressLine1 , @data.City, @data.PostalCodeUser
+                </label>
+                <label for="address1" class="address-details"> Phone number:@data.Mobile</label>
+            </div>
+        </div>
+    </div>
+}
+
+    <input type="button" name="" value="+ Add New Address" class="addnewadd" onclick="addAddress()" id="addnewadd">
+
+    <div id="test" class="fornonedisplay">
+        <div class="addnewaddtab">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="stNo">Street name</label>
+                    <input type="text" name="" placeholder="Street name" id="stNo" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="hsNo">House number</label>
+                    <input type="text" name="" placeholder="House nmuber" id="hsNo" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="ptNo">Postal Code</label>
+                    <input type="text" name="" placeholder="Postal Code" id="ptNo" class="form-control">
+                </div>
+                <label for="city">City</label>
+                <div class="col-md-6">
+                    <select id="ddlCity" class="form-control">
+                        <option value="Tambach-Dietharz" selected>Tambach-Dietharz</option>
+                    </select>
+
+                </div>
+            </div>
+            <div>
+                <label for="phno">Phone number</label>
+                <input type="tel" name="" id="phno" class="form-control">
+            </div>
+            <div>
+                <input type="button" name="" class="addsavebtn"  value="Save" onclick="btnSaveAddress()">
+                <input type="button" name="" class="addcanselbtn" value="Cancel" onclick="btnCancelAddress()">
+            </div>
+        </div>
+    </div>
+
+   <input type="button" id="btnAddressSelect" name="" value="Continue" class="btnCheckavail" onclick="btnAddress()" />

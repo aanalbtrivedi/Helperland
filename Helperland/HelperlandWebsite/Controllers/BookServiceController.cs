@@ -1,7 +1,9 @@
 ﻿using Helperland.Utilities;
+using HelperlandWebsite.CommonUse;
 using HelperlandWebsite.Data;
 using HelperlandWebsite.Models;
 using HelperlandWebsite.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,7 @@ namespace HelperlandWebsite.Controllers
         public decimal discount = 20;
         public string adduseradd;
         public string Postcode;
+        public string email;
 
 
         public BookServiceController(HelperlandContext helperlandContext)
@@ -31,6 +34,11 @@ namespace HelperlandWebsite.Controllers
         
         public IActionResult Book_now()
         {
+            //ViewBag.email = HttpContext.Session.GetString(StaticValue.EmailSV);
+            //email = ViewBag.email;
+            //User user = _helperlandContext.Users.Where(u => u.Email == email).FirstOrDefault();
+            //ViewBag.userId = user.UserId;
+            //userID = user.UserId;
             Book_nowViewModel book_NowViewModel = new Book_nowViewModel();
             return View(book_NowViewModel);
         }
@@ -45,19 +53,16 @@ namespace HelperlandWebsite.Controllers
                 ServiceRequest serviceRequest = new ServiceRequest();
                 serviceRequest.UserId = userID;
                 serviceRequest.ServiceStartDate = bookings.Cleandate;
-                //serviceRequest.ServiceHours = bookings.Startingtime;
                 serviceRequest.HasPets = bookings.Pets;
                 serviceRequest.Comments = bookings.Comments;
                 serviceRequest.CreatedDate = DateTime.Now.Date;
                 serviceRequest.TotalCost = bookings.TotalPayment;
                 serviceRequest.ServiceHours = bookings.Hours;
-                //serviceRequest.ZipCode = bookings.PostalCode;
+                serviceRequest.ZipCode = bookings.PostalCode;
                 serviceRequest.Discount = discount;
                 _helperlandContext.ServiceRequests.Add(serviceRequest);
                 _helperlandContext.SaveChanges();
                 int servid = serviceRequest.ServiceRequestId;
-                //serreqId = serviceRequest.ServiceRequestId;
-                //adduseradd = serreqId.ToString();
                 serreqId = servid;
 
                 return View();
@@ -69,12 +74,9 @@ namespace HelperlandWebsite.Controllers
                 ServiceRequestAddress serviceRequestAddress = new ServiceRequestAddress();
 
                 serviceRequestAddress.AddressLine1 = checkAddres.AddressLine1;
-                //serviceRequestAddress.AddressLine2 = checkAddres.AddressLine2;
                 serviceRequestAddress.City = checkAddres.City;
                 serviceRequestAddress.PostalCode = checkAddres.PostalCode;
                 serviceRequestAddress.Mobile = checkAddres.Mobile;
-                //serviceRequestAddress.ServiceRequestId = serreqId;
-                //serviceRequestAddress.Email = checkAddres.Email;
                 _helperlandContext.ServiceRequestAddresses.Add(serviceRequestAddress);
                 _helperlandContext.SaveChanges();
                 ModelState.Clear();
@@ -105,14 +107,6 @@ namespace HelperlandWebsite.Controllers
             {
                 return Content("Good");
             }
-            //ListAddressViewModel
-
-
-            //user.FirstName = user.FirstName;
-            //user.LastName = user.LastName;
-            //user.Email = user.Email;
-            //user.UserTypeId = StaticValue.CustomerType;
-            //user.Mobile = user.Mobile;
 
         }
         public List<ListAddressViewModel> ListAddress()

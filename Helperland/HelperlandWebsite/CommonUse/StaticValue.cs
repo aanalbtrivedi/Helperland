@@ -9,6 +9,7 @@ namespace HelperlandWebsite.CommonUse
     {
         public static int CustomerType = 1;
         public static int SP_Type = 2;
-
+        public static string EmailSV = "Email";
+        public static string userId = "userId";
     }
 }

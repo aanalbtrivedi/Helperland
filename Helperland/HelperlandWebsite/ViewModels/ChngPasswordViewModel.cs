@@ -11,6 +11,9 @@ namespace HelperlandWebsite.ViewModels
         [Key]
         public int UserId { get; set; }
 
+        public string oldPassword { get; set; }
+        public string newPassword { get; set; }
+
         [Required(ErrorMessage = "Please enter a Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }

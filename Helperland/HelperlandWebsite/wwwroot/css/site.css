@@ -1285,11 +1285,9 @@ ul li a {
 }
 
 .card {
-    margin: 50px auto;
+    margin: 20px auto;
     float: none;
-    margin-bottom: 10px;
     width: 25rem;
-    padding: 40px 0 50px 0;
 }
 
 .touch-inputs {
@@ -2109,12 +2107,12 @@ span.Cancel {
     display: inline;
 }
 
-.stars {
+/*.stars {
     width: 120px;
     height: 20px;
     display: inline;
     padding-left: 30px;
-}
+}*/
 
 .cus-block {
     display: block;
@@ -3136,4 +3134,193 @@ p.why-decs-right {
 .mysettingCust{
     padding:8px;
     margin:10px;
+}
+
+.formclass{
+    font-size:18px;
+    color:#565656;
+}
+
+.setradiolbl{
+    margin-right:30px;
+    display:block;
+}
+
+.setradio{
+    margin:10px !important;
+}
+
+.columnAvatar {
+    float: left;
+    cursor: pointer;
+    padding: 5px;
+}
+.columnAvatar .avatar {
+        height: 50px;
+        border-radius: 85px;
+        padding:10px;
+        background-color:rgba(255, 255, 255, 0.5)
+}
+    .columnAvatar .active {
+        border: 3px solid #1D7A8c;
+    }
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #2980B9;
+    }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #ddd
+        }
+
+.show {
+    display: block;
+}
+
+.Navbarcolor{
+    background-color:#525252 !important;
+}
+
+.btncustDash{
+    width : 100%;
+}
+
+.modal-dialog{
+    padding-top:100px !important;
+}
+
+.glyphicon-edit{
+    padding-left:30px;
+}
+
+.editAddCust{
+      width:450px;
+}
+
+.formAddCust{
+    width:200px;
+}
+
+/*input[type="checkbox"]:checked {
+     height: 50px;
+    border-radius: 85px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 3px solid #1D7A8c;
+}
+input:checked + label {
+    color: red;
+}*/
+
+span.stars, span.stars span {
+    display: block;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star-o-white.svg) 0 0 repeat-x;
+    width: 200px; /* width of a star multiplied by 5 */
+    height: 40px; /* the height of the star */
+    background-size: 40px 40px;
+}
+
+    span.stars span {
+        background-position: 0 0;
+        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg);
+    }
+
+span.stars1, span.stars1 span {
+    display: block;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star-o-white.svg) 0 0 repeat-x;
+    width: 200px; /* width of a star multiplied by 5 */
+    height: 40px; /* the height of the star */
+    background-size: 40px 40px;
+}
+
+    span.stars1 span {
+        background-position: 0 0;
+        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg);
+    }
+
+span.stars2, span.stars2 span {
+    display: block;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star-o-white.svg) 0 0 repeat-x;
+    width: 200px; /* width of a star multiplied by 5 */
+    height: 40px; /* the height of the star */
+    background-size: 40px 40px;
+}
+
+    span.stars2 span {
+        background-position: 0 0;
+        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg);
+    }
+
+span.stars3, span.stars3 span {
+    display: block;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star-o-white.svg) 0 0 repeat-x;
+    width: 200px; /* width of a star multiplied by 5 */
+    height: 40px; /* the height of the star */
+    background-size: 40px 40px;
+}
+
+    span.stars3 span {
+        background-position: 0 0;
+        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/star.svg);
+    }
+
+.rateSP{
+    display:inline !important;
+}
+
+.rateinput{
+    width:50px !important;
+}
+
+.v1 .favourite-pro-wrapper.block-customer .favourite-pro {
+    padding: 30px 5px;
+}
+
+.favourite-pro {
+    border: 1px solid #e1e1e1;
+    margin-bottom: 15px;
+    padding: 20px 5px;
+    text-align: center;
+}
+
+.btnblock {
+    background-color: #ff6b6b;
+    border-radius: 27px;
+    border: 1px solid #FFFFFF;
+    width: 84px;
+    height: 46px;
+}
+
+.divblock{
+    display:block;
 }

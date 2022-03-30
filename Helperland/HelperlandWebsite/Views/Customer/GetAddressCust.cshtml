@@ -16,9 +16,61 @@
             </div>
             <div class="col-md-11">
                 <label class="address-details">
-                    Address:@data.AddressId ,@data.AddressLine1 , @data.City, @data.PostalCodeUser
+                    Address:@data.AddressId ,@data.AddressLine1 @data.AddressLine2, @data.City, @data.PostalCodeUser
                 </label>
-                <label for="address1" class="address-details"> Phone number:@data.Mobile</label>
+                <label for="address1" class="address-details">
+                    Phone number:@data.Mobile
+                    <p class="glyphicon glyphicon-remove right cursor-change" onclick="btndltAddress(@data.AddressId)">&nbsp;&nbsp;</p>
+                    <p class="glyphicon glyphicon-edit right cursor-change" onclick="btneditAddress(@data.AddressId)">&nbsp;&nbsp;</p>
+                </label>
+            </div>
+            <div id="editModel" class="reschedule fornonedisplay">
+                <div class="modal-dialog vertical-align-center modal-sm">
+                    <div class="modal-content editAddCust">
+                        <div class="modal-body">
+                            <h4 class="modal-title">Reschedule Service Request</h4>
+                            <button class="modal-closer" data-dismiss="modal" onclick="btnClose()">
+                                Close
+                            </button>
+                            <div class="form-group calculator-date-time in-modal">
+                                <label class="control-label">Select New Date &amp; Time</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label >Stree name</label>
+                                        <input value="@data.AddressLine1" class="form-control formAddCust" id="AddressLine1"/>
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <label >House number</label>
+                                    <input  value="@data.AddressLine2" class="form-control formAddCust" id="AddressLine2"/>
+                                    <span class="text-danger"></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Postal Code</label>
+                                        <input value="@data.PostalCodeUser" class="form-control formAddCust" id="PostalCode"/>
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <label>City</label>
+                                    <select id="ddlCity" class="form-control formAddCust">
+                                        <option value="@data.City" selected>Tambach-Dietharz</option>
+                                    </select>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Mobile Number</label>
+                                        <input value="@data.Mobile" class="form-control formAddCust" id="Mobile" />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" name="update" onclick="updateAddress(@data.AddressId)">
+                                Update
+                            </button>
+                            <p class="text-info fornonedisplay" id="updationmsg">Schedule is updated.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -57,9 +109,8 @@
         </div>
         <div>
             <input type="button" name="" class="addsavebtn" id="btnSaveAddress" value="Save" onclick="btnSaveAddress()">
-            <input type="button" name="" class="addcanselbtn" value="Cancel">
+            <input type="button" name="" class="addcanselbtn" value="Cancel" onclick="btnCancelAddress()"> 
         </div>
     </div>
 </div>
 
-<input type="button" id="btnAddressSelect" name="" value="Continue" class="btnCheckavail" onclick="btnAddress()" />

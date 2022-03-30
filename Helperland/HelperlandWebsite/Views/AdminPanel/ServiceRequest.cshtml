@@ -1,0 +1,100 @@
+﻿@model IEnumerable<HelperlandWebsite.ViewModels.ServiceRequestsAdminViewModel>
+
+@{
+    ViewData["Title"] = "ServiceRequest";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-10 admin-user-div">
+    <h1 class="User-Management">Service Management</h1>
+    <button type="button" class="add-new-user-btn right">
+        <img src="assets/img/add.png" class="img-responsive add-user">
+        <span class="add-new-user">Add new user</span>
+    </button>
+    <div class="admin-white-Rectangle">
+        <input type="text" name="" placeholder="Service ID" class="admin-whitebox-button">
+        <input type="text" name="" placeholder="Postal Code" class="admin-whitebox-button">
+        <input type="email" name="" placeholder="Email" class="admin-whitebox-button">
+        <select class="admin-whitebox-button">
+            <option>Select Customer</option>
+        </select>
+        <select class="admin-whitebox-button">
+            <option>Select Service Provider</option>
+        </select>
+        <select class="admin-whitebox-button">
+            <option>Select Status</option>
+        </select>
+        <select class="admin-whitebox-button">
+            <option>SP Payment Status</option>
+        </select>
+        <select class="admin-whitebox-button">
+            <option></option>
+        </select>
+        <input type="checkbox" name=""  id="hasIssue" class="admin-whitebox-button">
+        <label for="hasIssue">Has Issue</label>
+    </div>
+
+    <table class="table table-visual admin-table2">
+        <thead>
+            <tr class="table-heading">
+                <th>
+                    @Html.DisplayNameFor(model => model.StartingDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hours)
+                </th>
+                <th>
+                    Customer Details
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrossAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NetAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Discount)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>*@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartingDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hours)
+                    </td>
+                    <td>
+                        @ViewBag.AddressLine1
+                        @ViewBag.City
+                        @ViewBag.PostalCode
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrossAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NetAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Discount)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>*@
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ServiceId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ServiceId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ServiceId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
